@@ -31,7 +31,29 @@ A professional compliance automation platform for IFC models, built with Next.js
    npm run dev
    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Prerequisites
+
+- **[Node.js](https://nodejs.org/en/download)**: v20 or higher
+- **Package Manager**: [npm](https://www.npmjs.com/get-npm) (bundled with Node.js)
+
+## Roadmap
+
+### Currently Implemented
+
+- [x] **Core Viewer**: High-performance IFC model loading and rendering
+- [x] **Fragment Management**: Efficient model handling with import/export capabilities
+- [x] **Camera Controls**: Basic navigation and auto-fit functionality
+- [x] **Performance Monitoring**: Real-time FPS and memory usage stats
+- [x] **UI/UX**: Modern, responsive interface with Dark/Light mode support
+
+### Planned Features
+
+- [ ] **Properties Panel**: Inspect element attributes and metadata
+- [ ] **Measurement Tools**: Distance, angle, and area measurements
+- [ ] **Sectioning**: Clipping planes and section box tools
+- [ ] **BCF Support**: BIM Collaboration Format integration for issue tracking
 
 ---
 
