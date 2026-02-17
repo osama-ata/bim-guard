@@ -1,38 +1,37 @@
-# BIM Guard
+# BIMGuard AI
 
-A professional IFC model viewer and validator built with Next.js and @thatopen/components.
+A professional compliance automation platform for IFC models, built with Next.js 16, Tailwind v4, and Shadcn UI.
+
+## Features
+
+- **Automated Rule Extraction**: Ingest PDFs (Standards, Codes, BEPs) and extract machine-readable validation rules.
+- **3D IFC Compliance Checking**: Validate IFC models against extracted rules using `@thatopen/components`.
+- **IDE-Style Analysis**: A technical interface for deep-dive inspection of compliance issues.
+- **Reporting**: Generate BCF reports for flagged issues.
+
+## Tech Stack
+
+- **Frontend Framework**: Next.js 16.1.6 (App Router)
+- **Styling**: Tailwind CSS v4 + Shadcn UI
+- **BIM Core**: `@thatopen/components` & `@thatopen/fragments` (v3.3)
+- **Visualization**: Three.js
+- **Icons**: Lucide React
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
 
-```bash
-npm run dev
-```
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server**:
+
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
----
-
-## Prerequisites
-
-- **[Node.js](https://nodejs.org/en/download)**: v20 or higher
-- **Package Manager**: [npm](https://www.npmjs.com/get-npm) (bundled with Node.js)
-
-## Roadmap
-
-### Currently Implemented
-- [x] **Core Viewer**: High-performance IFC model loading and rendering
-- [x] **Fragment Management**: Efficient model handling with import/export capabilities
-- [x] **Camera Controls**: Basic navigation and auto-fit functionality
-- [x] **Performance Monitoring**: Real-time FPS and memory usage stats
-- [x] **UI/UX**: Modern, responsive interface with Dark/Light mode support
-
-### Planned Features
-- [ ] **Properties Panel**: Inspect element attributes and metadata
-- [ ] **Measurement Tools**: Distance, angle, and area measurements
-- [ ] **Sectioning**: Clipping planes and section box tools
-- [ ] **BCF Support**: BIM Collaboration Format integration for issue tracking
 
 ---
 
@@ -44,86 +43,37 @@ This project follows **SOLID principles** for maintainability and testability.
 
 ```
 bim-guard/
-├── app/                    # Next.js App Router pages
+├── app/                        # Next.js App Router
+│   ├── analysis/               # Compliance Analysis Flows (Run & Results)
+│   ├── library/                # Asset Management (Documents & Rules)
+│   ├── projects/               # Project Management
+│   ├── layout.tsx              # Root Layout (Sidebar + Header)
+│   └── page.tsx                # Dashboard
 ├── components/
-│   ├── ui/                 # Shadcn UI components
-│   ├── viewer/             # Viewer-specific components
-│   │   ├── ViewerToolbar.tsx
-│   │   ├── ViewerStats.tsx
-│   │   └── ViewerContainer.tsx
-│   ├── IFCViewer.tsx       # Main viewer (composed)
-│   └── HomepageViewer.tsx
-├── hooks/                  # React custom hooks
-│   └── useBIMViewer.ts
-├── services/               # Business logic services
-│   ├── CameraService.ts
-│   ├── FragmentsService.ts
-│   └── StatsService.ts
-├── lib/                    # Utilities and context
-│   ├── ifcLoaderService.ts
-│   └── BIMContext.tsx
-├── types/                  # TypeScript interfaces
-│   ├── services.ts
-│   └── models.ts
-└── public/lib/             # Static assets (WASM, workers)
+│   ├── compliance/             # Analysis & 3D Viewer Components
+│   ├── dashboard/              # Dashboard Widgets
+│   ├── layout/                 # Global UI (Sidebar, Header)
+│   ├── rule-studio/            # Rule Extraction Components
+│   ├── ui/                     # Shadcn Primitives
+│   └── viewer/                 # Base Viewer Components
+├── lib/                        # Utilities & Context
+└── public/                     # Static Assets
 ```
 
-### SOLID Principles Applied
+## Core Workflows
 
-| Principle | Implementation |
-|-----------|----------------|
-| **S**ingle Responsibility | Each service/component has one job |
-| **O**pen/Closed | Extend via interfaces, not modification |
-| **L**iskov Substitution | Services are interchangeable via interfaces |
-| **I**nterface Segregation | Small, focused interfaces in `types/` |
-| **D**ependency Inversion | Components depend on abstractions |
+1. **Insight Ingestion**: Upload a PDF -> Verify extracted rules in the **Rule Studio**.
+2. **Compliance Check**: Select a project -> Upload IFC -> Apply Rules.
+3. **Analysis Review**: Inspect results in the **Compliance Viewer** (3D + List).
+4. **Reporting**: Export valid issues to BCF/Reporting formats.
 
-### Coding Guidelines
+## Development
 
-1. **Services must implement interfaces** defined in `types/services.ts`
-2. **Components should compose**, not inherit - use sub-components
-3. **Services require initialization** - always call `init()` before use
-4. **Use refs for service instances** in React components to maintain stability
-5. **Callbacks should be memoized** with `useCallback` to prevent re-renders
+This project follows **SOLID principles** and uses a modular component architecture.
 
-### Service Initialization Order
+- **Services** (e.g., `CameraService`) encapsulate business logic.
+- **Components** are composed to build complex views (e.g., `ComplianceResultsPage`).
 
-```typescript
-// 1. Create and init loader service first (initializes FragmentsManager)
-const loaderService = new IFCLoaderService(components);
-await loaderService.init();
+## License
 
-// 2. Create other services after FragmentsManager is ready
-const fragmentsService = new FragmentsService(fragmentsManager, scene);
-fragmentsService.init(); // Safe to call now
-
-// 3. Camera and Stats services don't require async init
-const cameraService = new CameraService(camera);
-const statsService = new StatsService();
-```
-
-### Adding New Features
-
-1. **Define interface first** in `types/services.ts`
-2. **Create service** in `services/` implementing the interface
-3. **Create UI component** in `components/viewer/` if needed
-4. **Compose in parent** component using refs and proper initialization
-
-### Key Dependencies
-
-- `@thatopen/components` - BIM components library
-- `@thatopen/fragments` - Fragment model handling
-- `web-ifc` - IFC parsing engine
-- `three` - 3D rendering
-
----
-
-## Learn More
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [That Open Docs](https://docs.thatopen.com)
-- [Three.js Documentation](https://threejs.org/docs)
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+Private
