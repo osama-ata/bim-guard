@@ -40,6 +40,16 @@ A professional compliance automation platform for IFC models, built with Next.js
 
 ## Roadmap
 
+For a detailed multi-phase development plan, see the [Development Roadmap](docs/roadmap.md).
+
+### Converting to PDF
+
+If you need to generate a PDF version of the roadmap, use the following command (requires Pandoc and LaTeX):
+
+```bash
+pandoc docs/roadmap.md -o docs/roadmap.pdf --pdf-engine=xelatex -V mainfont="Segoe UI Symbol"
+```
+
 ### Currently Implemented
 
 - [x] **Core Viewer**: High-performance IFC model loading and rendering
