@@ -1,0 +1,3669 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../guides/contributing/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.24">
+    
+    
+      
+        <title>BIMGUARD AI Development Roadmap - BIM Guard Documentation</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.28978c9b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bimguard-ai-development-roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="BIM Guard Documentation" class="md-header__button md-logo" aria-label="BIM Guard Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BIM Guard Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BIMGUARD AI Development Roadmap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/osama-ata/bim-guard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/system_architecture/" class="md-tabs__link">
+          
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../frontend/components/" class="md-tabs__link">
+          
+  
+  Frontend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../backend/api_reference/" class="md-tabs__link">
+          
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guides/getting_started/" class="md-tabs__link">
+          
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="././" class="md-tabs__link">
+        
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="BIM Guard Documentation" class="md-nav__button md-logo" aria-label="BIM Guard Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    BIM Guard Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/osama-ata/bim-guard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/system_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/backend_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/state_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/ifcopenshell_rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IfcOpenShell Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundation-and-mvp-months-1-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation and MVP (Months 1-6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Foundation and MVP (Months 1-6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ifc-data-pipeline-months-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 IFC Data Pipeline (Months 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-hard-coded-rule-engine-months-2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Hard-Coded Rule Engine (Months 2-4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-bcf-output-generation-month-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 BCF Output Generation (Month 4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-command-line-interface-months-5-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Command-Line Interface (Months 5-6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-semantic-enrichment-and-intelligence-months-7-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Semantic Enrichment and Intelligence (Months 7-12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Semantic Enrichment and Intelligence (Months 7-12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-graph-neural-network-development-months-7-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Graph Neural Network Development (Months 7-9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rdf-knowledge-graph-construction-months-8-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 RDF Knowledge Graph Construction (Months 8-10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-shacl-rule-framework-months-9-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 SHACL Rule Framework (Months 9-11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-hybrid-rule-system-integration-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Hybrid Rule System Integration (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-web-application-development-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Web Application Development (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-geometric-precision-and-performance-months-13-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Geometric Precision and Performance (Months 13-18)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Geometric Precision and Performance (Months 13-18)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-minkowski-sum-clearance-engine-months-13-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Minkowski Sum Clearance Engine (Months 13-15)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-geosparql-integration-months-14-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 GeoSPARQL Integration (Months 14-16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-multi-jurisdiction-rule-composition-months-15-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Multi-Jurisdiction Rule Composition (Months 15-17)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-performance-optimization-months-16-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Performance Optimization (Months 16-18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-advanced-bcf-reporting-months-17-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Advanced BCF Reporting (Months 17-18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-enterprise-scale-advanced-features-months-19-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Enterprise Scale &amp; Advanced Features (Months 19-24)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Enterprise Scale &amp; Advanced Features (Months 19-24)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-4d-temporal-compliance-months-19-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 4D Temporal Compliance (Months 19-21)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-custom-ontology-builder-months-20-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Custom Ontology Builder (Months 20-22)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-api-integration-ecosystem-months-21-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 API &amp; Integration Ecosystem (Months 21-23)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-machine-learning-enhancements-months-22-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Machine Learning Enhancements (Months 22-24)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-enterprise-deployment-devops-months-22-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Enterprise Deployment &amp; DevOps (Months 22-24)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Stack Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technology Stack Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source-commitments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Source Commitments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics &amp; KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics &amp; KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 (Foundation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 (Intelligence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 (Precision)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-enterprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 (Enterprise)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budget-resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget &amp; Resource Allocation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Budget &amp; Resource Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-costs-monthly-phase-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Costs (Monthly, Phase 3-4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competitive-differentiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competitive Differentiation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Competitive Differentiation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-solibri-model-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vs. Solibri Model Checker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-autodesk-bim-360" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vs. Autodesk BIM 360
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-proposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Proposition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundation-and-mvp-months-1-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation and MVP (Months 1-6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Foundation and MVP (Months 1-6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ifc-data-pipeline-months-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 IFC Data Pipeline (Months 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-hard-coded-rule-engine-months-2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Hard-Coded Rule Engine (Months 2-4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-bcf-output-generation-month-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 BCF Output Generation (Month 4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-command-line-interface-months-5-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Command-Line Interface (Months 5-6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-semantic-enrichment-and-intelligence-months-7-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Semantic Enrichment and Intelligence (Months 7-12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Semantic Enrichment and Intelligence (Months 7-12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-graph-neural-network-development-months-7-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Graph Neural Network Development (Months 7-9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rdf-knowledge-graph-construction-months-8-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 RDF Knowledge Graph Construction (Months 8-10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-shacl-rule-framework-months-9-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 SHACL Rule Framework (Months 9-11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-hybrid-rule-system-integration-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Hybrid Rule System Integration (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-web-application-development-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Web Application Development (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-geometric-precision-and-performance-months-13-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Geometric Precision and Performance (Months 13-18)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Geometric Precision and Performance (Months 13-18)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-minkowski-sum-clearance-engine-months-13-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Minkowski Sum Clearance Engine (Months 13-15)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-geosparql-integration-months-14-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 GeoSPARQL Integration (Months 14-16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-multi-jurisdiction-rule-composition-months-15-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Multi-Jurisdiction Rule Composition (Months 15-17)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-performance-optimization-months-16-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Performance Optimization (Months 16-18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-advanced-bcf-reporting-months-17-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Advanced BCF Reporting (Months 17-18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-enterprise-scale-advanced-features-months-19-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Enterprise Scale &amp; Advanced Features (Months 19-24)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Enterprise Scale &amp; Advanced Features (Months 19-24)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-deliverables_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Deliverables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Deliverables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-4d-temporal-compliance-months-19-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 4D Temporal Compliance (Months 19-21)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-custom-ontology-builder-months-20-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Custom Ontology Builder (Months 20-22)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-api-integration-ecosystem-months-21-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 API &amp; Integration Ecosystem (Months 21-23)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-machine-learning-enhancements-months-22-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Machine Learning Enhancements (Months 22-24)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-enterprise-deployment-devops-months-22-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Enterprise Deployment &amp; DevOps (Months 22-24)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Stack Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technology Stack Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source-commitments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Source Commitments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Risks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics &amp; KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics &amp; KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 (Foundation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 (Intelligence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 (Precision)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-enterprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 (Enterprise)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budget-resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget &amp; Resource Allocation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Budget &amp; Resource Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-costs-monthly-phase-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Costs (Monthly, Phase 3-4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competitive-differentiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competitive Differentiation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Competitive Differentiation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-solibri-model-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vs. Solibri Model Checker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-autodesk-bim-360" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vs. Autodesk BIM 360
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-proposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Proposition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="bimguard-ai-development-roadmap">BIMGUARD AI Development Roadmap</h1>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>BIMGUARD AI is a unified compliance engine for Building Information Modeling (BIM) that automates validation of BIM Execution Plans (BEPs) and spatial building codes. This roadmap outlines a 24-month development plan structured across four phases, progressing from foundational capabilities to enterprise-scale deployment. The system addresses the critical gap between unstructured regulatory documents and structured IFC model validation, combining Large Language Models (LLMs), computational geometry, and semantic web technologies to transform manual compliance checking into automated, AI-driven validation.</p>
+<p><strong>Project Team:</strong> Letícia Cristovam Clemente, Malak Yaseen, Marc Azzam, Mark Shane Haines, Osama Ata</p>
+<p><strong>Target Market:</strong> Architecture, Engineering, Construction, and Operations (AECO) industry, addressing $15.8 billion in annual losses from inadequate interoperability[1]</p>
+<hr />
+<h2 id="phase-1-foundation-and-mvp-months-1-6">Phase 1: Foundation and MVP (Months 1-6)</h2>
+<h3 id="objective">Objective</h3>
+<p>Establish core infrastructure and demonstrate proof-of-concept for the three foundational pillars: IFC parsing, rule-based validation, and BCF output generation.</p>
+<h3 id="key-deliverables">Key Deliverables</h3>
+<h4 id="11-ifc-data-pipeline-months-1-2">1.1 IFC Data Pipeline (Months 1-2)</h4>
+<p><strong>Goal:</strong> Reliable extraction and normalization of IFC model data</p>
+<p><strong>Technical Implementation:</strong></p>
+<ul>
+<li>Deploy IfcOpenShell library for IFC4 Reference View and IFC2x3 Coordination View parsing</li>
+<li>Develop data extraction pipeline converting IFC entities to structured pandas dataframes</li>
+<li>Build spatial hierarchy indexing (building → storey → space → element relationships)</li>
+<li>Create property set extraction module for custom attributes</li>
+<li>Implement geometric feature extraction (bounding boxes, centroids, volumes)</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Parse 95% of buildingSMART Sample-Test-Files repository successfully[2]</li>
+<li>Extract geometry and metadata for 100,000+ element models within 30 seconds</li>
+<li>Generate element catalogs, adjacency tables, and equipment inventories</li>
+</ul>
+<p><strong>Key Technologies:</strong> Python, IfcOpenShell, pandas, numpy</p>
+<h4 id="12-hard-coded-rule-engine-months-2-4">1.2 Hard-Coded Rule Engine (Months 2-4)</h4>
+<p><strong>Goal:</strong> Implement deterministic validation for five priority element types</p>
+<p><strong>Target Elements:</strong></p>
+<ol>
+<li>Doors (fire exits, accessible entries, standard)</li>
+<li>Windows (egress, ventilation, fire-rated)</li>
+<li>Ducts (clearance zones, fire dampers)</li>
+<li>Structural beams (load paths, clearances)</li>
+<li>Stairs (rise/run ratios, handrails, egress width)</li>
+</ol>
+<p><strong>Rule Coverage:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code Standard</th>
+<th>Rules Implemented</th>
+<th>Priority Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBC 2024 Fire Safety</td>
+<td>25 rules</td>
+<td>Exit width, fire ratings, clearances</td>
+</tr>
+<tr>
+<td>ADA Accessibility</td>
+<td>18 rules</td>
+<td>Door width, turning radius, slopes</td>
+</tr>
+<tr>
+<td>NFPA 70 Electrical</td>
+<td>12 rules</td>
+<td>Panel clearances, working space</td>
+</tr>
+</tbody>
+</table>
+<p><em>Phase 1 rule coverage targets</em></p>
+<p><strong>Technical Implementation:</strong></p>
+<ul>
+<li>Python-based rule evaluation engine with JSON rule definitions</li>
+<li>Bounding box-based spatial clash detection (AABB intersection tests)</li>
+<li>Violation tracking with element references and rule citations</li>
+<li>Processing target: &lt;50ms per rule evaluation</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>100% accuracy on deterministic rule checks (door width, fire rating presence)</li>
+<li>Detection of 90%+ spatial clearance violations using bounding box approximations</li>
+<li>Validation report generation in &lt;5 seconds for 10,000-element models</li>
+</ul>
+<h4 id="13-bcf-output-generation-month-4">1.3 BCF Output Generation (Month 4)</h4>
+<p><strong>Goal:</strong> Generate industry-standard BIM Collaboration Format reports</p>
+<p><strong>Technical Implementation:</strong></p>
+<ul>
+<li>BCF 2.1 XML schema implementation</li>
+<li>Viewpoint generation with camera positions and element highlighting</li>
+<li>Issue metadata: severity, rule reference, responsible discipline</li>
+<li>GUID-based element referencing compatible with Revit, Navisworks, Solibri</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>BCF files importable into Autodesk Revit without errors</li>
+<li>Correct viewpoint navigation to violation locations</li>
+<li>Issue descriptions include element IDs, rule text, and recommended remediation</li>
+</ul>
+<h4 id="14-command-line-interface-months-5-6">1.4 Command-Line Interface (Months 5-6)</h4>
+<p><strong>Goal:</strong> Deliver functional MVP for pilot testing</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>IFC model upload and validation job submission</li>
+<li>Rule set selection (IBC + ADA + local code combination)</li>
+<li>Validation execution with progress reporting</li>
+<li>BCF report download</li>
+<li>Text-based violation summary</li>
+</ul>
+<p><strong>Deployment:</strong> Docker container with CLI interface for internal testing</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Complete validation workflow operational end-to-end</li>
+<li>Pilot testing with 3 internal IFC models demonstrating violation detection</li>
+<li>Documentation: API reference, rule coverage matrix, sample reports</li>
+</ul>
+<h3 id="phase-1-milestones">Phase 1 Milestones</h3>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>IFC Pipeline Complete</td>
+<td>Parse 10 sample models successfully</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rule Engine Functional</td>
+<td>Validate 55 hard-coded rules</td>
+</tr>
+<tr>
+<td>5</td>
+<td>BCF Generation Working</td>
+<td>Import test report into Revit</td>
+</tr>
+<tr>
+<td>6</td>
+<td>MVP Release</td>
+<td>CLI tool ready for pilot program</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-2-semantic-enrichment-and-intelligence-months-7-12">Phase 2: Semantic Enrichment and Intelligence (Months 7-12)</h2>
+<h3 id="objective_1">Objective</h3>
+<p>Introduce AI-driven semantic classification to bridge the gap between element form (geometry) and function (operational role), enabling context-aware compliance checking.</p>
+<h3 id="key-deliverables_1">Key Deliverables</h3>
+<h4 id="21-graph-neural-network-development-months-7-9">2.1 Graph Neural Network Development (Months 7-9)</h4>
+<p><strong>Goal:</strong> Classify ambiguous building elements using spatial and topological context</p>
+<p><strong>Problem Statement:</strong></p>
+<p>IFC models store geometric form (IfcDoor, width=0.9m) but lack functional classification (is it a fire exit, accessible entry, or closet door?). Rule requirements vary dramatically by function[3].</p>
+<p><strong>GNN Architecture:</strong></p>
+<ul>
+<li>Edge-Conditioned Graph Neural Network (EC-GNN) targeting 91%+ accuracy[4]</li>
+<li>Node features: geometry (dimensions, aspect ratios, material properties)</li>
+<li>Edge features: spatial relationships (adjacency, distance, topological connectivity)</li>
+<li>Training approach: Transfer learning from pre-trained PointNet++ on 3D objects</li>
+<li>Fine-tuning dataset: 500-1,000 labeled building elements from historic projects</li>
+</ul>
+<p><strong>Implementation Steps:</strong></p>
+<ol>
+<li>Construct spatial graph from IFC model (elements as nodes, adjacency as edges)</li>
+<li>Extract geometric point clouds and material properties per element</li>
+<li>
+<p>Train GNN classifier for 8 priority categories:</p>
+</li>
+<li>
+<p>Fire exit doors vs standard doors</p>
+</li>
+<li>Egress corridors vs standard corridors</li>
+<li>Accessible routes vs general circulation</li>
+<li>
+<p>Maintenance equipment vs general mechanical</p>
+</li>
+<li>
+<p>Deploy inference pipeline with confidence thresholding (&gt;0.8 = auto-classify, 0.6-0.8 = human review, &lt;0.6 = flag as ambiguous)</p>
+</li>
+</ol>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>85%+ classification accuracy on test set</li>
+<li>Inference time &lt;200ms per element (parallelizable across 8 CPU cores)</li>
+<li>Confidence scores provided for all predictions enabling human oversight</li>
+</ul>
+<p><strong>Key Technologies:</strong> PyTorch Geometric, PyTorch, IfcOpenShell (geometry extraction)</p>
+<h4 id="22-rdf-knowledge-graph-construction-months-8-10">2.2 RDF Knowledge Graph Construction (Months 8-10)</h4>
+<p><strong>Goal:</strong> Create semantic representation of BIM model for advanced querying and reasoning</p>
+<p><strong>Technical Implementation:</strong></p>
+<ul>
+<li>Convert IFC elements to RDF triples using ifcOWL ontology[5]</li>
+<li>Enrich with GNN-inferred functional classifications</li>
+<li>Store in Apache Jena triple store for SPARQL querying</li>
+<li>Link to external ontologies: buildingSMART Data Dictionary, local code taxonomies</li>
+</ul>
+<p><strong>RDF Schema Example:</strong></p>
+<p>ex:Element_Door_001
+rdf:type ifc:IfcDoor ;
+rdf:type ex:FireExit ; # GNN inference
+ex:width "1.05"^^xsd:decimal ;
+ex:height "2.13"^^xsd:decimal ;
+ex:adjacentTo ex:Stairwell_234 ;
+ex:inferenceConfidence "0.94"^^xsd:decimal ;
+ex:fireRating "90-min"^^xsd:string .</p>
+<p><strong>Spatial Query Capabilities:</strong></p>
+<ul>
+<li>GeoSPARQL for geometric relationships (within, intersects, adjacent)</li>
+<li>Path finding for egress route validation</li>
+<li>Topological analysis for accessibility compliance</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>100% IFC model conversion to RDF without data loss</li>
+<li>SPARQL queries execute in &lt;500ms for 50,000-element models</li>
+<li>Successful integration of GNN outputs into knowledge graph</li>
+</ul>
+<h4 id="23-shacl-rule-framework-months-9-11">2.3 SHACL Rule Framework (Months 9-11)</h4>
+<p><strong>Goal:</strong> Replace hard-coded rules with maintainable, version-controlled constraint shapes</p>
+<p><strong>Why SHACL Over Hard-Coded Rules:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Hard-Coded</th>
+<th>SHACL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code Update Cycle</td>
+<td>6-12 months</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>Execution Speed</td>
+<td>10ms/rule</td>
+<td>30ms/rule</td>
+</tr>
+<tr>
+<td>Auditability</td>
+<td>Black box</td>
+<td>Full transparency</td>
+</tr>
+<tr>
+<td>Multi-Jurisdiction Support</td>
+<td>Requires recompilation</td>
+<td>Add new shape file</td>
+</tr>
+</tbody>
+</table>
+<p><em>SHACL advantages for compliance validation[6]</em></p>
+<p><strong>SHACL Shape Development:</strong></p>
+<p>Create constraint shapes for:</p>
+<ol>
+<li>IBC 2024 Fire Safety (45 shapes covering exit paths, fire ratings, clearances)</li>
+<li>ADA Accessibility (32 shapes for doorways, slopes, turning radii)</li>
+<li>NFPA 70 Electrical (28 shapes for panel clearances, working spaces)</li>
+<li>ISO 19650 Information Requirements (18 shapes for naming conventions, classification codes)</li>
+</ol>
+<p><strong>Example SHACL Constraint:</strong></p>
+<p>ex:FireExitDoorShape
+a sh:NodeShape ;
+sh:targetClass ex:FireExit ;
+sh:property [
+sh:path ex:width ;
+sh:minInclusive 1.07 ; # 42 inches per IBC 1003
+sh:message "Fire exit width must be ≥1.07m (42 inches)" ;
+sh:severity sh:Violation ;
+] ;
+sh:property [
+sh:path ex:clearanceZone ;
+sh:minInclusive 3.0 ; # 3 meters required
+sh:message "Fire exit requires 3m clearance zone" ;
+] .</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Store shapes in version-controlled TTL files (one per jurisdiction/code)</li>
+<li>Deploy SHACL validation via Apache Jena SHACL API</li>
+<li>Enable dynamic shape selection based on project location and code year</li>
+<li>Generate violation reports with rule citations and confidence scores</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>120+ SHACL shapes covering Phase 1 hard-coded rules</li>
+<li>Validation performance &lt;100ms per shape suite</li>
+<li>Zero false positives on expert-annotated test models</li>
+<li>Audit trail: every violation linked to specific shape constraint and source code clause</li>
+</ul>
+<h4 id="24-hybrid-rule-system-integration-months-10-12">2.4 Hybrid Rule System Integration (Months 10-12)</h4>
+<p><strong>Goal:</strong> Combine deterministic, GNN-assisted, and SHACL validation into unified pipeline</p>
+<p><strong>Architecture:</strong></p>
+<ol>
+<li>
+<p><strong>Deterministic Pre-Filter</strong> (60% of checks)</p>
+</li>
+<li>
+<p>Instant evaluation of unambiguous rules (door has fire rating: yes/no)</p>
+</li>
+<li>
+<p>Hard-coded for speed: &lt;10ms per check</p>
+</li>
+<li>
+<p><strong>GNN Semantic Classification</strong> (35% of checks)</p>
+</li>
+<li>
+<p>Infer element function when IFC metadata incomplete</p>
+</li>
+<li>
+<p>Confidence threshold: &gt;0.8 auto-accept, 0.6-0.8 human review, &lt;0.6 skip</p>
+</li>
+<li>
+<p><strong>SHACL Constraint Validation</strong> (all elements)</p>
+</li>
+<li>
+<p>Apply function-appropriate shape constraints</p>
+</li>
+<li>
+<p>Conditional rules: different requirements for fire exits vs standard doors</p>
+</li>
+<li>
+<p><strong>Human Review Layer</strong> (5% escalation)</p>
+</li>
+<li>
+<p>Flag low-confidence inferences for expert verification</p>
+</li>
+<li>UI-based review workflow with accept/reject/reclassify options</li>
+</ol>
+<p><strong>Processing Pipeline:</strong></p>
+<p>IFC Model Input
+↓
+[Deterministic Rules] → 60% validated (instant)
+↓
+[GNN Classification] → Semantic enrichment (200ms/element)
+↓
+[RDF Graph Update] → Knowledge graph population
+↓
+[SHACL Validation] → Apply function-specific constraints (100ms/shape)
+↓
+[Geometric Clearance] → Phase 3 component (placeholder)
+↓
+Compliance Report (BCF + Audit Trail)</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>End-to-end validation in &lt;2 minutes for 50,000-element model</li>
+<li>95% automation rate (5% requiring human review)</li>
+<li>Precision &gt;90%, Recall &gt;85% against expert-annotated benchmarks</li>
+</ul>
+<h4 id="25-web-application-development-months-10-12">2.5 Web Application Development (Months 10-12)</h4>
+<p><strong>Goal:</strong> Replace CLI with interactive web interface for broader accessibility</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>IFC model upload with drag-and-drop (max 500MB file size)</li>
+<li>Project configuration: jurisdiction selection, code year, custom rule sets</li>
+<li>Real-time validation progress monitoring</li>
+<li>Interactive violation browser with 3D element highlighting</li>
+<li>Confidence score display for GNN inferences</li>
+<li>Approval workflow for ambiguous classifications</li>
+<li>BCF export and PDF report generation</li>
+<li>User authentication and project workspace management</li>
+</ul>
+<p><strong>Technology Stack:</strong></p>
+<ul>
+<li>Frontend: React.js with Three.js for 3D visualization</li>
+<li>Backend: FastAPI (Python) for validation orchestration</li>
+<li>Database: PostgreSQL for projects, MongoDB for IFC metadata</li>
+<li>Triple Store: Apache Jena Fuseki for RDF/SPARQL</li>
+<li>Queue: Celery + Redis for async validation jobs</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Support 10 concurrent validation jobs</li>
+<li>Web interface responsive on desktop and tablet</li>
+<li>3D model viewer renders 100,000-element models smoothly</li>
+<li>User onboarding documentation and video tutorials</li>
+</ul>
+<h3 id="phase-2-milestones">Phase 2 Milestones</h3>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>GNN Model Trained</td>
+<td>85%+ accuracy on test set</td>
+</tr>
+<tr>
+<td>10</td>
+<td>RDF Pipeline Complete</td>
+<td>Full IFC-to-RDF conversion</td>
+</tr>
+<tr>
+<td>11</td>
+<td>SHACL Shapes Deployed</td>
+<td>120+ constraint shapes validated</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Web Application Launch</td>
+<td>Beta release for pilot users</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-3-geometric-precision-and-performance-months-13-18">Phase 3: Geometric Precision and Performance (Months 13-18)</h2>
+<h3 id="objective_2">Objective</h3>
+<p>Implement advanced computational geometry for precise "soft clash" detection of invisible clearance zones, addressing the core gap in existing coordination tools.</p>
+<h3 id="key-deliverables_2">Key Deliverables</h3>
+<h4 id="31-minkowski-sum-clearance-engine-months-13-15">3.1 Minkowski Sum Clearance Engine (Months 13-15)</h4>
+<p><strong>Goal:</strong> Generate precise 3D clearance volumes around maintainable equipment and validate spatial compliance</p>
+<p><strong>Mathematical Foundation:</strong></p>
+<p>The "halo effect" is computed via Minkowski sum[7]:</p>
+<p>$$
+P_{offset} = P \oplus B_r
+$$</p>
+<p>Where:</p>
+<ul>
+<li>$P$ = building element geometry</li>
+<li>$B_r$ = sphere of radius $r$ (clearance requirement)</li>
+<li>$P_{offset}$ = clearance volume around element</li>
+</ul>
+<p><strong>Implementation Approach:</strong></p>
+<ol>
+<li>
+<p><strong>Geometry Extraction</strong></p>
+</li>
+<li>
+<p>Extract IFC element geometry as triangulated mesh</p>
+</li>
+<li>Support for IfcBRep, IfcSweptSolid, IfcCSG representations</li>
+<li>
+<p>Convert to unified mesh format (OBJ or STL)</p>
+</li>
+<li>
+<p><strong>Two-Phase Spatial Indexing</strong></p>
+</li>
+<li>
+<p>Phase 1: AABB (Axis-Aligned Bounding Box) pre-filter</p>
+</li>
+<li>Cost: &lt;1ms per element pair</li>
+<li>Eliminates 95\%+ of non-intersecting pairs</li>
+<li>Phase 2: Exact Minkowski sum computation</li>
+<li>Applied only when bounding boxes overlap</li>
+<li>
+<p>Cost: 100-500ms per element (parallelizable)</p>
+</li>
+<li>
+<p><strong>Clearance Volume Storage</strong></p>
+</li>
+<li>
+<p>Store offset surfaces as new IfcSpatialElement entities</p>
+</li>
+<li>Index in spatial R-tree for efficient querying</li>
+<li>
+<p>Link to source element and governing rule</p>
+</li>
+<li>
+<p><strong>Intersection Testing</strong></p>
+</li>
+<li>
+<p>Query all elements within clearance zone</p>
+</li>
+<li>Triangle-triangle intersection tests for exact validation</li>
+<li>Report gap measurements and violating elements</li>
+</ol>
+<p><strong>Example Validation Workflow:</strong></p>
+<p>Electrical Panel (NFPA 70 requirement):
+├─ Required clearance: 1m width × 0.9m depth × 2m height
+├─ Generate Minkowski sum of panel + clearance box
+├─ Query spatial index for elements within clearance zone
+├─ Detect: Storage cabinet intrudes 0.15m into clearance
+└─ Violation: "Panel working space obstructed (gap: 0.75m, required: 0.9m)"</p>
+<p><strong>Key Technologies:</strong></p>
+<ul>
+<li>CGAL (Computational Geometry Algorithms Library) for Minkowski sum</li>
+<li>SciPy spatial module for R-tree indexing</li>
+<li>NumPy for geometric computations</li>
+<li>GPU acceleration via CUDA for large models (optional Phase 4 enhancement)</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Compute clearance zones for 1,000 equipment elements in &lt;5 minutes</li>
+<li>Detect soft clashes with 100% accuracy (validated against manual measurements)</li>
+<li>Processing time &lt;500ms per element on 8-core CPU</li>
+<li>Generate 3D clearance visualizations for BCF viewpoints</li>
+</ul>
+<h4 id="32-geosparql-integration-months-14-16">3.2 GeoSPARQL Integration (Months 14-16)</h4>
+<p><strong>Goal:</strong> Enable semantic spatial queries combining geometric reasoning with RDF knowledge</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>Spatial relationship queries: within, intersects, adjacent, near</li>
+<li>Path analysis for egress route validation</li>
+<li>Distance calculations between classified elements</li>
+<li>Topological reasoning for accessibility compliance</li>
+</ul>
+<p><strong>Example Queries:</strong></p>
+<p><strong>Fire Exit Path Validation:</strong>
+SELECT ?door ?corridor ?stairwell
+WHERE {
+?door rdf:type ex:FireExit ;
+geo:sfWithin ?corridor .
+?corridor rdf:type ex:EgressCorridor ;
+ex:connectsTo ?stairwell .
+?stairwell rdf:type ex:EvacuationStairwell ;
+ex:exitsTo ?exterior .
+FILTER NOT EXISTS {
+?obstacle geo:sfIntersects ?corridor .
+?obstacle ex:obstructsEgress true .
+}
+}</p>
+<p><strong>ADA Accessible Route Analysis:</strong>
+SELECT ?route (MIN(?slope) AS ?maxSlope) (MIN(?width) AS ?minWidth)
+WHERE {
+?route rdf:type ex:AccessibleRoute ;
+ex:slopePercent ?slope ;
+ex:clearWidth ?width .
+FILTER(?slope &lt; 5.0 &amp;&amp; ?width &gt;= 0.91)
+}
+GROUP BY ?route
+HAVING (COUNT(?route) &gt; 0)</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Deploy Apache Jena with GeoSPARQL extension</li>
+<li>Convert clearance volumes to WKT (Well-Known Text) geometry format</li>
+<li>Index geometric literals in spatial database</li>
+<li>Integrate spatial query results into validation pipeline</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Execute spatial queries in &lt;1 second for 100,000-element models</li>
+<li>Validate egress paths from any point to building exit</li>
+<li>Detect accessibility violations based on spatial topology</li>
+</ul>
+<h4 id="33-multi-jurisdiction-rule-composition-months-15-17">3.3 Multi-Jurisdiction Rule Composition (Months 15-17)</h4>
+<p><strong>Goal:</strong> Support simultaneous validation against multiple building codes with conflict resolution</p>
+<p><strong>Challenge:</strong></p>
+<p>Buildings must comply with:</p>
+<ul>
+<li>International codes (IBC, IFC)</li>
+<li>National codes (country-specific)</li>
+<li>Local amendments (city/municipality)</li>
+<li>Project-specific requirements (BEP, owner standards)</li>
+</ul>
+<p>Conflicts may arise (e.g., IBC requires 42-inch exit, local code requires 48-inch).</p>
+<p><strong>Solution Architecture:</strong></p>
+<ol>
+<li>
+<p><strong>Rule Package System</strong></p>
+</li>
+<li>
+<p>Modular SHACL shape sets per jurisdiction</p>
+</li>
+<li>Version control per code year (IBC2021, IBC2024)</li>
+<li>
+<p>Inheritance hierarchy: International → National → Local</p>
+</li>
+<li>
+<p><strong>Conflict Detection</strong></p>
+</li>
+<li>
+<p>Parse all active shape constraints</p>
+</li>
+<li>Identify overlapping properties with different thresholds</li>
+<li>
+<p>Flag conflicts for user resolution</p>
+</li>
+<li>
+<p><strong>Resolution Strategies</strong></p>
+</li>
+<li>
+<p>Most stringent rule wins (default)</p>
+</li>
+<li>Explicit precedence ordering (local &gt; national &gt; international)</li>
+<li>
+<p>User-defined overrides for project-specific exceptions</p>
+</li>
+<li>
+<p><strong>Audit Trail</strong></p>
+</li>
+<li>
+<p>Track which jurisdiction's rule triggered each violation</p>
+</li>
+<li>Document conflict resolution decisions</li>
+<li>Link to source code clauses in PDF regulations</li>
+</ol>
+<p><strong>Example Rule Package:</strong></p>
+<p>ex:ChicagoProjectRules
+ex:inheritsFrom ex:IBC2024, ex:IllinoisBuildingCode, ex:ChicagoAmendments ;
+ex:appliesTo "Commercial High-Rise" ;
+ex:conflictResolution ex:MostStringent ;
+ex:customExceptions [
+ex:rule ex:FireExitWidth ;
+ex:override "1.22"^^xsd:decimal ; # 48 inches
+ex:justification "Owner requirement per project BEP Section 3.2" ;
+] .</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Support 10+ jurisdiction rule packages simultaneously</li>
+<li>Detect and report conflicting requirements</li>
+<li>Generate jurisdiction-specific compliance reports</li>
+<li>Validation time increase &lt;20% with multiple rule sets active</li>
+</ul>
+<h4 id="34-performance-optimization-months-16-18">3.4 Performance Optimization (Months 16-18)</h4>
+<p><strong>Goal:</strong> Scale validation to enterprise-level federated models (500,000+ elements)</p>
+<p><strong>Optimization Strategies:</strong></p>
+<ol>
+<li>
+<p><strong>Parallel Processing</strong></p>
+</li>
+<li>
+<p>Distribute element validation across 16+ CPU cores</p>
+</li>
+<li>GPU acceleration for Minkowski sum computations</li>
+<li>
+<p>Asynchronous SHACL validation per shape</p>
+</li>
+<li>
+<p><strong>Incremental Validation</strong></p>
+</li>
+<li>
+<p>Track model changes between validation runs</p>
+</li>
+<li>Re-validate only modified elements and affected neighbors</li>
+<li>
+<p>Cache validation results for unchanged elements</p>
+</li>
+<li>
+<p><strong>Spatial Indexing</strong></p>
+</li>
+<li>
+<p>R-tree spatial index for O(log n) collision queries</p>
+</li>
+<li>Octree decomposition for large building volumes</li>
+<li>
+<p>Level-of-detail (LOD) for distant elements</p>
+</li>
+<li>
+<p><strong>Database Optimization</strong></p>
+</li>
+<li>
+<p>Triple store sharding for RDF graphs &gt;10M triples</p>
+</li>
+<li>Materialized SPARQL views for common queries</li>
+<li>Connection pooling and query caching</li>
+</ol>
+<p><strong>Performance Targets:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model Size \&amp; Phase 2 Performance \&amp; Phase 3 Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10,000 elements \&amp; 2 minutes \&amp; 30 seconds</td>
+</tr>
+<tr>
+<td>50,000 elements \&amp; 12 minutes \&amp; 2 minutes</td>
+</tr>
+<tr>
+<td>100,000 elements \&amp; 35 minutes \&amp; 5 minutes</td>
+</tr>
+<tr>
+<td>500,000 elements \&amp; N/A \&amp; 20 minutes</td>
+</tr>
+</tbody>
+</table>
+<p><em>Validation performance improvement targets</em></p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Validate 500,000-element federated model in &lt;20 minutes</li>
+<li>Support real-time validation (&lt;5 seconds) for incremental model changes</li>
+<li>Memory footprint &lt;16GB for largest models</li>
+<li>95%+ CPU utilization during validation (efficient parallelization)</li>
+</ul>
+<h4 id="35-advanced-bcf-reporting-months-17-18">3.5 Advanced BCF Reporting (Months 17-18)</h4>
+<p><strong>Goal:</strong> Enhance compliance reports with geometric visualizations and remediation guidance</p>
+<p><strong>New Features:</strong></p>
+<ul>
+<li>3D visualization of clearance zones in BCF viewpoints</li>
+<li>Color-coded violation severity (critical/major/minor)</li>
+<li>Gap measurements with dimension annotations</li>
+<li>Before/after comparison views for resolved issues</li>
+<li>AI-generated remediation suggestions</li>
+<li>Multi-discipline issue routing (architect/MEP/structural)</li>
+<li>Integration with project management tools (Procore, BIM 360)</li>
+</ul>
+<p><strong>Remediation Suggestion Engine:</strong></p>
+<p>def suggest_remediation(violation):
+if violation.type == "ClearanceViolation":
+gap_shortfall = violation.required - violation.actual
+return {
+"options": [
+f"Relocate {violation.element} by {gap_shortfall}m",
+f"Reduce {violation.element} size by {gap_shortfall}m",
+f"Reconfigure adjacent elements to create clearance"
+],
+"impact_analysis": estimate_downstream_changes(violation),
+"cost_estimate": rough_order_magnitude(violation)
+}</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>BCF reports include 3D clearance visualizations</li>
+<li>Remediation suggestions provided for 80%+ of violations</li>
+<li>Issue routing based on element discipline classification</li>
+<li>Export compatibility with BIM 360, Procore, Autodesk Construction Cloud</li>
+</ul>
+<h3 id="phase-3-milestones">Phase 3 Milestones</h3>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>Minkowski Sum Engine</td>
+<td>Precise soft clash detection operational</td>
+</tr>
+<tr>
+<td>16</td>
+<td>GeoSPARQL Deployed</td>
+<td>Spatial queries integrated into validation</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Multi-Jurisdiction Support</td>
+<td>10+ rule packages with conflict resolution</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Performance Optimized</td>
+<td>500K-element validation in &lt;20 minutes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-4-enterprise-scale-advanced-features-months-19-24">Phase 4: Enterprise Scale &amp; Advanced Features (Months 19-24)</h2>
+<h3 id="objective_3">Objective</h3>
+<p>Transform BIMGUARD AI into production-grade enterprise platform with temporal validation, custom ontologies, and third-party integration ecosystem.</p>
+<h3 id="key-deliverables_3">Key Deliverables</h3>
+<h4 id="41-4d-temporal-compliance-months-19-21">4.1 4D Temporal Compliance (Months 19-21)</h4>
+<p><strong>Goal:</strong> Validate compliance across construction phases, recognizing temporary conditions</p>
+<p><strong>Problem Statement:</strong></p>
+<p>Current validation assumes final building state. During construction:</p>
+<ul>
+<li>Clearance zones may be temporarily obstructed</li>
+<li>Egress paths may be incomplete</li>
+<li>Equipment may be staged in future maintenance zones</li>
+</ul>
+<p><strong>Solution: Time-Aware Validation</strong></p>
+<ol>
+<li>
+<p><strong>Construction Phase Modeling</strong></p>
+</li>
+<li>
+<p>Extend IFC model with construction sequence metadata</p>
+</li>
+<li>Define validation rules per construction phase</li>
+<li>
+<p>Track "acceptable temporary conditions" vs permanent violations</p>
+</li>
+<li>
+<p><strong>4D BIM Integration</strong></p>
+</li>
+<li>
+<p>Import 4D schedules from Navisworks TimeLiner, Synchro, MS Project</p>
+</li>
+<li>Link IFC elements to construction activities</li>
+<li>
+<p>Generate phase-specific compliance snapshots</p>
+</li>
+<li>
+<p><strong>Temporal Rule Constraints</strong></p>
+</li>
+<li>
+<p>SHACL shapes with time-based activation conditions</p>
+</li>
+<li>Exemptions for temporary construction configurations</li>
+<li>Progressive compliance tracking toward final condition</li>
+</ol>
+<p><strong>Example Temporal Rule:</strong></p>
+<p>ex:ElectricalPanelClearance
+sh:property [
+sh:path ex:clearanceZone ;
+sh:minInclusive 0.9 ;
+ex:temporalCondition [
+ex:activeDuring "Construction Phase 3-Final" ;
+ex:exemptDuring "Construction Phase 1-2" ;
+ex:reason "Panel energization in Phase 3" ;
+] ;
+] .</p>
+<p><strong>Validation Workflow:</strong></p>
+<ol>
+<li>User selects construction phase date</li>
+<li>System filters active rules for that phase</li>
+<li>Validation highlights:</li>
+<li>Current compliance status</li>
+<li>Future compliance risks (Phase N+1)</li>
+<li>Temporary exemptions expiring soon</li>
+<li>Report: "67 temporary violations, 12 must resolve before Phase 3"</li>
+</ol>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Import 4D schedules from 3 major platforms (Navisworks, Synchro, Primavera)</li>
+<li>Phase-specific validation reports</li>
+<li>Temporal violation tracking over project lifecycle</li>
+<li>Predictive alerts for future compliance risks</li>
+</ul>
+<h4 id="42-custom-ontology-builder-months-20-22">4.2 Custom Ontology Builder (Months 20-22)</h4>
+<p><strong>Goal:</strong> Enable clients to define domain-specific element classifications and rules</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Healthcare facilities: medical gas systems, infection control zones</li>
+<li>Data centers: hot/cold aisle clearances, equipment rack spacing</li>
+<li>Industrial facilities: process equipment, hazardous area classifications</li>
+<li>Educational facilities: ADA-compliant classrooms, lab safety zones</li>
+</ul>
+<p><strong>Ontology Development Tools:</strong></p>
+<ol>
+<li>
+<p><strong>Visual Ontology Editor</strong></p>
+</li>
+<li>
+<p>Web-based interface for defining custom element classes</p>
+</li>
+<li>Drag-and-drop property assignment</li>
+<li>Inheritance from base ifcOWL classes</li>
+<li>
+<p>Validation rule template library</p>
+</li>
+<li>
+<p><strong>Rule Authoring Wizard</strong></p>
+</li>
+<li>
+<p>Natural language rule input converted to SHACL</p>
+</li>
+<li>Example: "Medical gas outlets must be 1.5m from electrical panels"</li>
+<li>LLM-assisted SHACL shape generation with human review</li>
+<li>
+<p>Test rule against sample models before deployment</p>
+</li>
+<li>
+<p><strong>Ontology Version Control</strong></p>
+</li>
+<li>
+<p>Git-based versioning for custom ontologies</p>
+</li>
+<li>Branching for project-specific variations</li>
+<li>
+<p>Merge conflict resolution for collaborative editing</p>
+</li>
+<li>
+<p><strong>Marketplace Integration</strong></p>
+</li>
+<li>
+<p>Share custom ontologies with community</p>
+</li>
+<li>Download industry-standard ontologies (healthcare, data center)</li>
+<li>Version compatibility checking</li>
+</ol>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Non-technical users create custom element classes via UI</li>
+<li>LLM generates valid SHACL shapes from natural language rules with 90%+ accuracy</li>
+<li>Custom ontologies deployable without code changes</li>
+<li>Community marketplace with 20+ industry-specific ontologies</li>
+</ul>
+<h4 id="43-api-integration-ecosystem-months-21-23">4.3 API &amp; Integration Ecosystem (Months 21-23)</h4>
+<p><strong>Goal:</strong> Transform BIMGUARD AI into platform accessible by third-party tools and services</p>
+<p><strong>API Capabilities:</strong></p>
+<ol>
+<li>
+<p><strong>RESTful Validation API</strong></p>
+</li>
+<li>
+<p>Endpoints: /validate, /rules, /reports, /models</p>
+</li>
+<li>Synchronous validation for small models (&lt;10K elements)</li>
+<li>Asynchronous jobs for large models with webhook callbacks</li>
+<li>
+<p>Authentication: OAuth 2.0, API keys</p>
+</li>
+<li>
+<p><strong>Streaming Validation API</strong></p>
+</li>
+<li>
+<p>WebSocket connection for real-time model changes</p>
+</li>
+<li>Incremental validation as designers edit in Revit/ArchiCAD</li>
+<li>
+<p>Sub-second feedback loop for rapid iteration</p>
+</li>
+<li>
+<p><strong>Rule Management API</strong></p>
+</li>
+<li>
+<p>Query available rule packages and jurisdictions</p>
+</li>
+<li>Upload custom SHACL shapes</li>
+<li>
+<p>Version control and activation of rule sets</p>
+</li>
+<li>
+<p><strong>Third-Party Integrations</strong></p>
+</li>
+<li>
+<p>Autodesk Revit plugin: validate on save, display violations in model</p>
+</li>
+<li>Autodesk BIM 360: automated validation on model upload</li>
+<li>BlenderBIM: open-source integration for OSArch community</li>
+<li>Procore: link compliance reports to project tasks</li>
+</ol>
+<p><strong>SDK Development:</strong></p>
+<ul>
+<li>Python SDK for automation scripts</li>
+<li>JavaScript SDK for web integrations</li>
+<li>.NET SDK for Revit plugin development</li>
+<li>Comprehensive API documentation with code examples</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>API response time &lt;500ms for synchronous validation (10K elements)</li>
+<li>99.9% API uptime (enterprise SLA)</li>
+<li>5 third-party integrations launched (Revit, BIM 360, BlenderBIM, Procore, +1)</li>
+<li>100+ API users within 3 months of launch</li>
+</ul>
+<h4 id="44-machine-learning-enhancements-months-22-24">4.4 Machine Learning Enhancements (Months 22-24)</h4>
+<p><strong>Goal:</strong> Leverage historical validation data to improve prediction accuracy and detect novel patterns</p>
+<p><strong>Advanced ML Capabilities:</strong></p>
+<ol>
+<li>
+<p><strong>Graph Neural Network Improvements</strong></p>
+</li>
+<li>
+<p>Expand training data to 20,000+ labeled elements</p>
+</li>
+<li>Multi-task learning: simultaneous classification of element type, function, and risk level</li>
+<li>Active learning: prioritize uncertain predictions for human labeling</li>
+<li>
+<p>Target accuracy: 95%+ classification (up from 85% in Phase 2)</p>
+</li>
+<li>
+<p><strong>Violation Prediction Models</strong></p>
+</li>
+<li>
+<p>Train on historical validation reports to predict violation likelihood</p>
+</li>
+<li>Risk scoring per element: probability of future non-compliance</li>
+<li>
+<p>Proactive alerts: "This design pattern historically fails ADA compliance"</p>
+</li>
+<li>
+<p><strong>Anomaly Detection</strong></p>
+</li>
+<li>
+<p>Unsupervised learning to identify atypical spatial configurations</p>
+</li>
+<li>Flag novel patterns not covered by existing rules</li>
+<li>
+<p>Suggest new rules based on detected anomalies</p>
+</li>
+<li>
+<p><strong>Natural Language Rule Extraction</strong></p>
+</li>
+<li>
+<p>LLM fine-tuning on building code corpora</p>
+</li>
+<li>Automated extraction of rule parameters from PDF documents</li>
+<li>Accuracy target: 80%+ extraction of quantitative constraints</li>
+</ol>
+<p><strong>ML Operations Infrastructure:</strong></p>
+<ul>
+<li>Model training pipeline: automated retraining on new validation data</li>
+<li>A/B testing framework: compare model versions in production</li>
+<li>Model monitoring: track prediction accuracy drift over time</li>
+<li>Explainability: SHAP values for GNN predictions</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>GNN classification accuracy &gt;95% on diverse building types</li>
+<li>Violation risk prediction with 70%+ precision at 80%+ recall</li>
+<li>Anomaly detection flags 15+ novel compliance patterns in pilot dataset</li>
+<li>LLM extracts rules from new code PDFs with 80%+ parameter accuracy</li>
+</ul>
+<h4 id="45-enterprise-deployment-devops-months-22-24">4.5 Enterprise Deployment &amp; DevOps (Months 22-24)</h4>
+<p><strong>Goal:</strong> Production-ready infrastructure with enterprise scalability, security, and reliability</p>
+<p><strong>Infrastructure:</strong></p>
+<ul>
+<li>Cloud deployment: AWS/Azure multi-region architecture</li>
+<li>Kubernetes orchestration for microservices</li>
+<li>Load balancing: support 1,000+ concurrent users</li>
+<li>Autoscaling: elastic compute for validation workload spikes</li>
+<li>Data storage: S3/Blob Storage for IFC models, PostgreSQL for metadata</li>
+<li>Triple store cluster: Apache Jena Fuseki with replication</li>
+</ul>
+<p><strong>Security &amp; Compliance:</strong></p>
+<ul>
+<li>SOC 2 Type II compliance</li>
+<li>GDPR compliance for EU customers</li>
+<li>End-to-end encryption for model uploads</li>
+<li>Role-based access control (RBAC)</li>
+<li>Audit logging for all validation activities</li>
+<li>ISO 27001 information security management</li>
+</ul>
+<p><strong>Monitoring &amp; Reliability:</strong></p>
+<ul>
+<li>99.9% uptime SLA</li>
+<li>Prometheus + Grafana for system metrics</li>
+<li>Distributed tracing (Jaeger) for request debugging</li>
+<li>Automated alerting for performance degradation</li>
+<li>Disaster recovery: daily backups, 4-hour RTO</li>
+</ul>
+<p><strong>DevOps Practices:</strong></p>
+<ul>
+<li>CI/CD pipeline: automated testing and deployment</li>
+<li>Infrastructure as Code (Terraform)</li>
+<li>Blue-green deployments for zero-downtime updates</li>
+<li>Feature flags for gradual rollout</li>
+<li>Automated security scanning (Snyk, Dependabot)</li>
+</ul>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li>Support 1,000 concurrent validation jobs</li>
+<li>99.9% monthly uptime</li>
+<li>API p95 latency &lt;500ms</li>
+<li>Pass SOC 2 audit</li>
+<li>Zero data breaches</li>
+</ul>
+<h3 id="phase-4-milestones">Phase 4 Milestones</h3>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>4D Validation</td>
+<td>Construction phase compliance tracking</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Custom Ontology Builder</td>
+<td>UI for client-defined rules</td>
+</tr>
+<tr>
+<td>23</td>
+<td>API Platform Launch</td>
+<td>5 third-party integrations live</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Enterprise Deployment</td>
+<td>Production infrastructure with 99.9% SLA</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="technology-stack-summary">Technology Stack Summary</h2>
+<h3 id="core-technologies">Core Technologies</h3>
+<table>
+<thead>
+<tr>
+<th>Layer \&amp; Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IFC Parsing \&amp; IfcOpenShell, ifcopenshell-python</td>
+</tr>
+<tr>
+<td>Data Processing \&amp; pandas, NumPy, SciPy</td>
+</tr>
+<tr>
+<td>Machine Learning \&amp; PyTorch, PyTorch Geometric, scikit-learn</td>
+</tr>
+<tr>
+<td>Semantic Web \&amp; Apache Jena, rdflib, pyshacl</td>
+</tr>
+<tr>
+<td>Computational Geometry \&amp; CGAL, Shapely, trimesh</td>
+</tr>
+<tr>
+<td>Spatial Indexing \&amp; R-tree, Octree, GeoSPARQL</td>
+</tr>
+<tr>
+<td>Backend \&amp; FastAPI, Celery, Redis, PostgreSQL, MongoDB</td>
+</tr>
+<tr>
+<td>Frontend \&amp; React.js, Three.js, Babylon.js</td>
+</tr>
+<tr>
+<td>DevOps \&amp; Docker, Kubernetes, Terraform, GitHub Actions</td>
+</tr>
+<tr>
+<td>Cloud \&amp; AWS/Azure (compute, storage, databases)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Complete technology stack for BIMGUARD AI</em></p>
+<h3 id="open-source-commitments">Open Source Commitments</h3>
+<ul>
+<li>Core validation algorithms: Open source (MIT license)</li>
+<li>SHACL shape libraries: Public GitHub repository</li>
+<li>IFC test models: Contribution to buildingSMART samples</li>
+<li>Community: Active participation in OSArch and buildingSMART forums</li>
+</ul>
+<hr />
+<h2 id="risk-management">Risk Management</h2>
+<h3 id="technical-risks">Technical Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk \&amp; Mitigation \&amp; Contingency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GNN accuracy below target (85\%) \&amp; Transfer learning from pre-trained models; expand training dataset \&amp; Fall back to deterministic classification rules</td>
+</tr>
+<tr>
+<td>SHACL performance bottleneck \&amp; Triple store optimization; query caching; materialized views \&amp; Hybrid system: SHACL for complex rules, hard-coded for high-volume checks</td>
+</tr>
+<tr>
+<td>Minkowski sum computation too slow \&amp; GPU acceleration; spatial indexing; LOD for distant elements \&amp; Approximate clearance zones with bounding boxes</td>
+</tr>
+<tr>
+<td>IFC parsing failures \&amp; Extensive testing with buildingSMART samples; fallback to IFC2x3 \&amp; Manual geometry input for problematic models</td>
+</tr>
+</tbody>
+</table>
+<p><em>Technical risk mitigation strategies</em></p>
+<h3 id="market-risks">Market Risks</h3>
+<ul>
+<li><strong>Competition from established tools (Solibri, BIM 360):</strong> Differentiate through soft clash detection and open standards approach</li>
+<li><strong>User adoption of new workflows:</strong> Pilot program with early adopters; comprehensive training materials</li>
+<li><strong>Code version fragmentation:</strong> Modular rule packages per jurisdiction; community contributions</li>
+<li><strong>Proprietary BIM tool lock-in:</strong> Emphasize openBIM and vendor-neutral compliance</li>
+</ul>
+<h3 id="operational-risks">Operational Risks</h3>
+<ul>
+<li><strong>Team expertise gaps:</strong> Hire specialists in computational geometry and semantic web technologies</li>
+<li><strong>Infrastructure costs:</strong> Start with pay-per-use cloud model; optimize before scaling</li>
+<li><strong>Data privacy concerns:</strong> SOC 2 compliance from day one; clear data handling policies</li>
+<li><strong>Open source community engagement:</strong> Dedicate resources to community building and support</li>
+</ul>
+<hr />
+<h2 id="success-metrics-kpis">Success Metrics &amp; KPIs</h2>
+<h3 id="phase-1-foundation">Phase 1 (Foundation)</h3>
+<ul>
+<li>IFC parsing success rate: &gt;95%</li>
+<li>Rule evaluation accuracy: 100% on deterministic checks</li>
+<li>BCF import success rate: 100% in Revit</li>
+</ul>
+<h3 id="phase-2-intelligence">Phase 2 (Intelligence)</h3>
+<ul>
+<li>GNN classification accuracy: &gt;85%</li>
+<li>SHACL validation coverage: 120+ shapes</li>
+<li>Web application user satisfaction: &gt;4.0/5.0</li>
+</ul>
+<h3 id="phase-3-precision">Phase 3 (Precision)</h3>
+<ul>
+<li>Soft clash detection accuracy: 100%</li>
+<li>500K-element validation time: &lt;20 minutes</li>
+<li>Multi-jurisdiction conflict detection: 100% of known conflicts</li>
+</ul>
+<h3 id="phase-4-enterprise">Phase 4 (Enterprise)</h3>
+<ul>
+<li>API uptime: 99.9%</li>
+<li>Third-party integrations: 5+</li>
+<li>Custom ontologies created: 20+ (community)</li>
+<li>Enterprise customers: 10+</li>
+</ul>
+<hr />
+<h2 id="budget-resource-allocation">Budget &amp; Resource Allocation</h2>
+<h3 id="team-structure">Team Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Role \&amp; Phase 1-2 \&amp; Phase 3-4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Lead \&amp; 1 FTE \&amp; 1 FTE</td>
+</tr>
+<tr>
+<td>ML Engineers \&amp; 1 FTE \&amp; 2 FTE</td>
+</tr>
+<tr>
+<td>Backend Developers \&amp; 2 FTE \&amp; 3 FTE</td>
+</tr>
+<tr>
+<td>Frontend Developers \&amp; 1 FTE \&amp; 2 FTE</td>
+</tr>
+<tr>
+<td>DevOps Engineers \&amp; 0.5 FTE \&amp; 1 FTE</td>
+</tr>
+<tr>
+<td>BIM Domain Experts \&amp; 1 FTE \&amp; 1 FTE</td>
+</tr>
+<tr>
+<td>QA/Testing \&amp; 0.5 FTE \&amp; 1 FTE</td>
+</tr>
+<tr>
+<td>Technical Writer \&amp; 0.5 FTE \&amp; 1 FTE</td>
+</tr>
+<tr>
+<td>Total \&amp; 7.5 FTE \&amp; 12 FTE</td>
+</tr>
+</tbody>
+</table>
+<p><em>Recommended team composition</em></p>
+<h3 id="infrastructure-costs-monthly-phase-3-4">Infrastructure Costs (Monthly, Phase 3-4)</h3>
+<ul>
+<li>Cloud compute (AWS/Azure): \$5,000-\$10,000</li>
+<li>Database hosting: \$2,000-\$4,000</li>
+<li>Storage (models, backups): \$1,000-\$2,000</li>
+<li>CDN \&amp; networking: \$500-\$1,000</li>
+<li>Third-party APIs (LLMs): \$2,000-\$5,000</li>
+<li>Monitoring \&amp; logging: \$500-\$1,000</li>
+</ul>
+<p><strong>Total monthly infrastructure: $11,000-$23,000</strong> (scales with usage)</p>
+<hr />
+<h2 id="competitive-differentiation">Competitive Differentiation</h2>
+<h3 id="vs-solibri-model-checker">vs. Solibri Model Checker</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Solibri</th>
+<th style="text-align: left;">BIMGUARD AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Soft clash detection</td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;">[x] Full 3D clearances</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI semantic classification</td>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;">[x] GNN-based</td>
+</tr>
+<tr>
+<td style="text-align: left;">Open rule format</td>
+<td style="text-align: left;">[ ] Proprietary</td>
+<td style="text-align: left;">[x] SHACL (W3C standard)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Custom ontologies</td>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;">[x] Visual editor</td>
+</tr>
+<tr>
+<td style="text-align: left;">4D temporal validation</td>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;">[x] Phase-aware</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pricing model</td>
+<td style="text-align: left;">Perpetual license</td>
+<td style="text-align: left;">SaaS subscription</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table: Competitive comparison with market leader</em></p>
+<h3 id="vs-autodesk-bim-360">vs. Autodesk BIM 360</h3>
+<ul>
+<li><strong>BIM 360:</strong> Cloud collaboration platform with basic rule checking</li>
+<li><strong>BIMGUARD AI:</strong> Specialized compliance engine with advanced spatial reasoning</li>
+<li><strong>Integration strategy:</strong> Complement BIM 360 via API integration</li>
+</ul>
+<h3 id="value-proposition">Value Proposition</h3>
+<p>"BIMGUARD AI is the only compliance platform that combines AI-driven semantic understanding with precise geometric validation using open standards, enabling architects and engineers to detect invisible spatial violations that traditional coordination tools miss."</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Gallaher, M. P., O'Connor, A. C., Dettbarn, J. L., &amp; Gilday, L. T. (2004). Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry (NIST GCR 04-867). National Institute of Standards and Technology.</p>
+<p>[2] buildingSMART International. (2020). IFC4 Reference View. https://standards.buildingsmart.org/MVD/RELEASE/IFC4/ADD2_TC1/RV1_2/</p>
+<p>[3] NFPA. (2023). NFPA 70: National Electrical Code. National Fire Protection Association.</p>
+<p>[4] Research shows Edge-Conditioned Graph Neural Networks achieve 91.8% accuracy at room classification with contextual awareness through neighborhood relationships.</p>
+<p>[5] buildingSMART. (2020). ifcOWL Ontology for Industry Foundation Classes. https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/</p>
+<p>[6] W3C. (2017). Shapes Constraint Language (SHACL). https://www.w3.org/TR/shacl/</p>
+<p>[7] Minkowski sum mathematical foundation for clearance volume computation: $P_{offset} = P \oplus B_r$ where P is element geometry and $B_r$ is clearance sphere.</p>
+<p>[8] ISO. (2018). ISO 19650-1:2018 — Organisation and digitisation of information about buildings and civil engineering works. International Organization for Standardization.</p>
+<p>[9] Eastman, C., Lee, J., Jeong, Y., &amp; Lee, J. (2009). Automatic rule-based checking of building designs. <em>Automation in Construction</em>, 18(8), 1011–1033.</p>
+<p>[10] buildingSMART International. (2021). BCF (BIM Collaboration Format) Version 2.1. https://github.com/buildingSMART/BCF-XML</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.tabs","navigation.sections","navigation.expand","content.code.copy","search.suggest","search.highlight"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.16f8adc2.min.js"></script>
+      
+    
+  </body>
+</html>

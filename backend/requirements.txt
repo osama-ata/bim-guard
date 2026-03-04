@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+ifcopenshell
+pydantic
+python-multipart

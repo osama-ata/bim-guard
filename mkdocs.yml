@@ -1,0 +1,42 @@
+site_name: BIM Guard Documentation
+repo_url: https://github.com/osama-ata/bim-guard # Update with your URL
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - System Architecture: architecture/system_architecture.md
+      - Backend Design: architecture/backend_design.md
+  - Frontend:
+      - Components: frontend/components.md
+      - State Management: frontend/state_management.md
+  - Backend:
+      - API Reference: backend/api_reference.md
+      - IfcOpenShell Rules: backend/ifcopenshell_rules.md
+  - Guides:
+      - Getting Started: guides/getting_started.md
+      - Contributing: guides/contributing.md
+  - Roadmap: roadmap.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

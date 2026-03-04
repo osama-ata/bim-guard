@@ -2,6 +2,10 @@
   "name": "bim-guard",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osama-ata/bim-guard.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

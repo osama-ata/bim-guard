@@ -15,9 +15,27 @@ export function IFCUploadButton() {
         fileInputRef.current?.click();
     };
 
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
+            // Upload to Python Backend
+            const formData = new FormData();
+            formData.append("file", file);
+            try {
+                const response = await fetch("/api/python/analyze", {
+                    method: "POST",
+                    body: formData,
+                });
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log("Analysis Result from Python Backend:", result);
+                } else {
+                    console.error("Analysis Failed:", await response.text());
+                }
+            } catch (error) {
+                console.error("Error sending to backend:", error);
+            }
+
             setUploadedFile(file);
             router.push("/viewer");
         }

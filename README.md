@@ -19,19 +19,40 @@ A professional compliance automation platform for IFC models, built with Next.js
 
 ## Getting Started
 
-1. **Install dependencies**:
+### 1. Frontend Setup (Next.js)
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+npm run dev
+```
 
-2. **Run the development server**:
+### 2. Backend Setup (FastAPI)
 
-   ```bash
-   npm run dev
-   ```
+```bash
+cd backend
+python -m venv venv
+# Activate virtual environment
+.\venv\Scripts\activate   # Windows
+# source venv/bin/activate # Linux/Mac
 
-## Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+_FastAPI API documentation will be available at [http://localhost:8000/docs](http://localhost:8000/docs)._
+
+### 3. Documentation (Zensical)
+
+```bash
+# From the backend virtual environment:
+pip install zensical
+cd ..
+zensical serve -a localhost:8001
+```
+
+_Zensical documentation site will be available at [http://localhost:8001](http://localhost:8001)._
+
+## Open [http://localhost:3000](http://localhost:3000) with your browser to see the Next.js application.
 
 ## Prerequisites
 
@@ -105,6 +126,18 @@ This project follows **SOLID principles** and uses a modular component architect
 
 - **Services** (e.g., `CameraService`) encapsulate business logic.
 - **Components** are composed to build complex views (e.g., `ComplianceResultsPage`).
+
+## Contributing
+
+We welcome contributions! The basic workflow includes:
+
+1. **Fork** the repository: [https://github.com/osama-ata/bim-guard](https://github.com/osama-ata/bim-guard)
+2. **Clone** and open in VS Code: `git clone <your-fork-url> && cd bim-guard && code .`
+3. **Branch**: `git checkout -b feature/my-feature`
+4. **Push**: `git push origin feature/my-feature`
+5. **Create a Pull Request** back to the main repository.
+
+For more detailed instructions, please read our [Contributing Guide](docs/guides/contributing.md).
 
 ## License
 
