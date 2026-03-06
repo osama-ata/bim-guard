@@ -1,0 +1,9 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "fastapi dev app/main.py",
+    "start": "fastapi run app/main.py"
+  }
+}

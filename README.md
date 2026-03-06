@@ -1,6 +1,6 @@
 # BIMGuard AI
 
-A professional compliance automation platform for IFC models, built with Next.js 16, Tailwind v4, and Shadcn UI.
+A professional compliance automation platform for IFC models, built as a full-stack Monorepo using Turborepo, Next.js 16, and FastAPI.
 
 ## Features
 
@@ -9,108 +9,81 @@ A professional compliance automation platform for IFC models, built with Next.js
 - **IDE-Style Analysis**: A technical interface for deep-dive inspection of compliance issues.
 - **Reporting**: Generate BCF reports for flagged issues.
 
-## Tech Stack
+## Tech Stack & Architecture
 
-- **Frontend Framework**: Next.js 16.1.6 (App Router)
-- **Styling**: Tailwind CSS v4 + Shadcn UI
-- **BIM Core**: `@thatopen/components` & `@thatopen/fragments` (v3.3)
-- **Visualization**: Three.js
-- **Icons**: Lucide React
+This repository is structured as a **Monorepo** using npm workspaces and Turborepo.
+
+- **Frontend (`apps/web`)**: Next.js 16.1.6 (App Router), Tailwind CSS v4, Shadcn UI, `@thatopen/components` (Three.js BIM Core).
+- **Backend (`apps/api`)**: Python FastAPI for heavy lifting and rule extraction processing.
 
 ## Getting Started
 
-### 1. Frontend Setup (Next.js)
+### Prerequisites
+
+- **[Node.js](https://nodejs.org/en/download)**: v20 or higher
+- **[Python](https://www.python.org/downloads/)**: 3.10 or higher
+
+### Installation
+
+1. **Install Node Dependencies** (From the root of the project):
+
+   ```bash
+   npm install
+   ```
+
+2. **Setup Python Environment** (For the backend API):
+
+   ```bash
+   cd apps/api
+   python -m venv venv
+
+   # Activate virtual environment
+   .\venv\Scripts\activate   # Windows
+   # source venv/bin/activate # Linux/Mac
+
+   pip install -r requirements.txt
+   cd ../..
+   ```
+
+### Running the Application Structure
+
+Thanks to Turborepo, you can run the entire stack (Frontend + Backend) simultaneously with a single command from the root folder:
 
 ```bash
-npm install
 npm run dev
 ```
 
-### 2. Backend Setup (FastAPI)
+- **Next.js Web App** will be available at [http://localhost:3000](http://localhost:3000)
+- **FastAPI Backend Docs** will be available at [http://localhost:8000/docs](http://localhost:8000/docs)
 
-```bash
-cd backend
-python -m venv venv
-# Activate virtual environment
-.\venv\Scripts\activate   # Windows
-# source venv/bin/activate # Linux/Mac
-
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-
-_FastAPI API documentation will be available at [http://localhost:8000/docs](http://localhost:8000/docs)._
-
-### 3. Documentation (Zensical)
-
-```bash
-# From the backend virtual environment:
-pip install zensical
-cd ..
-zensical serve -a localhost:8001
-```
-
-_Zensical documentation site will be available at [http://localhost:8001](http://localhost:8001)._
-
-## Open [http://localhost:3000](http://localhost:3000) with your browser to see the Next.js application.
-
-## Prerequisites
-
-- **[Node.js](https://nodejs.org/en/download)**: v20 or higher
-- **Package Manager**: [npm](https://www.npmjs.com/get-npm) (bundled with Node.js)
-
-## Roadmap
+## Documentation
 
 For a detailed multi-phase development plan, see the [Development Roadmap](docs/roadmap.md).
 
-### Converting to PDF
-
-If you need to generate a PDF version of the roadmap, use the following command (requires Pandoc and LaTeX):
+To run the Zensical documentation:
 
 ```bash
-pandoc docs/roadmap.md -o docs/roadmap.pdf --pdf-engine=xelatex -V mainfont="Segoe UI Symbol"
+# Ensure you are in the python environment where zensical is installed, or install it globally
+pip install zensical
+zensical serve -a localhost:8001
 ```
 
-### Currently Implemented
+## Repository Structure
 
-- [x] **Core Viewer**: High-performance IFC model loading and rendering
-- [x] **Fragment Management**: Efficient model handling with import/export capabilities
-- [x] **Camera Controls**: Basic navigation and auto-fit functionality
-- [x] **Performance Monitoring**: Real-time FPS and memory usage stats
-- [x] **UI/UX**: Modern, responsive interface with Dark/Light mode support
-
-### Planned Features
-
-- [ ] **Properties Panel**: Inspect element attributes and metadata
-- [ ] **Measurement Tools**: Distance, angle, and area measurements
-- [ ] **Sectioning**: Clipping planes and section box tools
-- [ ] **BCF Support**: BIM Collaboration Format integration for issue tracking
-
----
-
-## Development Conventions
-
-This project follows **SOLID principles** for maintainability and testability.
-
-### Architecture Overview
-
-```
+```text
 bim-guard/
-├── app/                        # Next.js App Router
-│   ├── analysis/               # Compliance Analysis Flows (Run & Results)
-│   ├── library/                # Asset Management (Documents & Rules)
-│   ├── projects/               # Project Management
-│   ├── layout.tsx              # Root Layout (Sidebar + Header)
-│   └── page.tsx                # Dashboard
-├── components/
-│   ├── compliance/             # Analysis & 3D Viewer Components
-│   ├── dashboard/              # Dashboard Widgets
-│   ├── layout/                 # Global UI (Sidebar, Header)
-│   ├── rule-studio/            # Rule Extraction Components
-│   ├── ui/                     # Shadcn Primitives
-│   └── viewer/                 # Base Viewer Components
-├── lib/                        # Utilities & Context
-└── public/                     # Static Assets
+├── apps/
+│   ├── api/                   # FastAPI Backend
+│   │   ├── app/               # API Routes and Services
+│   │   └── main.py            # FastAPI Entrypoint
+│   └── web/                   # Next.js Frontend
+│       ├── app/               # App Router Pages
+│       ├── components/        # React & Radix Components
+│       ├── lib/               # Utilities & Context
+│       └── public/            # Static Assets
+├── docs/                      # General markdown documentation
+├── turbo.json                 # Turborepo orchestration config
+└── package.json               # Root workspace definitions
 ```
 
 ## Core Workflows
@@ -120,13 +93,6 @@ bim-guard/
 3. **Analysis Review**: Inspect results in the **Compliance Viewer** (3D + List).
 4. **Reporting**: Export valid issues to BCF/Reporting formats.
 
-## Development
-
-This project follows **SOLID principles** and uses a modular component architecture.
-
-- **Services** (e.g., `CameraService`) encapsulate business logic.
-- **Components** are composed to build complex views (e.g., `ComplianceResultsPage`).
-
 ## Contributing
 
 We welcome contributions! The basic workflow includes:
@@ -134,8 +100,9 @@ We welcome contributions! The basic workflow includes:
 1. **Fork** the repository: [https://github.com/osama-ata/bim-guard](https://github.com/osama-ata/bim-guard)
 2. **Clone** and open in VS Code: `git clone <your-fork-url> && cd bim-guard && code .`
 3. **Branch**: `git checkout -b feature/my-feature`
-4. **Push**: `git push origin feature/my-feature`
-5. **Create a Pull Request** back to the main repository.
+4. **Link workspaces**: run `npm install`
+5. **Push**: `git push origin feature/my-feature`
+6. **Create a Pull Request** back to the main repository.
 
 For more detailed instructions, please read our [Contributing Guide](docs/guides/contributing.md).
 

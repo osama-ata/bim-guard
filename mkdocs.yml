@@ -17,15 +17,19 @@ nav:
   - Architecture:
       - System Architecture: architecture/system_architecture.md
       - Backend Design: architecture/backend_design.md
-  - Frontend:
-      - Components: frontend/components.md
-      - State Management: frontend/state_management.md
-  - Backend:
-      - API Reference: backend/api_reference.md
-      - IfcOpenShell Rules: backend/ifcopenshell_rules.md
+      - Frontend:
+          - Components: architecture/frontend/components.md
+          - State Management: architecture/frontend/state_management.md
+      - Backend:
+          - API Reference: architecture/backend/api_reference.md
+          - IfcOpenShell Rules: architecture/backend/ifcopenshell_rules.md
   - Guides:
       - Getting Started: guides/getting_started.md
       - Contributing: guides/contributing.md
+  - Course Deliverables:
+      - First Plenary Presentation: course-deliverables/first-plenary-presentation.md
+      - FMP Proposal: course-deliverables/MAICEN1125_M10_FMPPROPOSAL_Group_5.md
+      - Submission 1: course-deliverables/MAICEN1125_M10_SUBMISSION1_GROUP5.md
   - Roadmap: roadmap.md
 
 markdown_extensions:
