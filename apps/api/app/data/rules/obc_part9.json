@@ -1,0 +1,50 @@
+{
+  "id": "obc_part9",
+  "name": "Ontario Building Code (Part 9)",
+  "description": "Housing and Small Buildings",
+  "categories": [
+    {
+      "id": "stairs",
+      "name": "Stairs & Ramps",
+      "rules": [
+        {
+          "id": "rule_9.8.4.1",
+          "reference": "OBC 9.8.4.1",
+          "description": "Minimum run for rectangular treads.",
+          "parameters": {
+            "min_run_mm": 210,
+            "max_rise_mm": 200
+          },
+          "type": "geometric",
+          "target_ifc_class": "IfcStairFlight"
+        },
+        {
+          "id": "rule_9.8.5.2",
+          "reference": "OBC 9.8.5.2",
+          "description": "Minimum width of public stairs.",
+          "parameters": {
+            "min_width_mm": 900
+          },
+          "type": "geometric",
+          "target_ifc_class": "IfcStair"
+        }
+      ]
+    },
+    {
+      "id": "doors",
+      "name": "Doors & Clearances",
+      "rules": [
+        {
+          "id": "rule_9.5.5.1",
+          "reference": "OBC 9.5.5.1",
+          "description": "Minimum doorway width in dwelling units.",
+          "parameters": {
+            "min_width_mm": 810
+          },
+          "type": "geometric",
+          "target_ifc_class": "IfcDoor"
+        }
+      ]
+    }
+  ]
+}

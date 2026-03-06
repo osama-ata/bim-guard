@@ -1,7 +1,7 @@
 
-import { IssueSidebar } from "@/components/compliance/issue-sidebar";
-import { InspectorPanel } from "@/components/compliance/inspector-panel";
-import { Viewer3DPlaceholder } from "@/components/compliance/viewer-3d-placeholder";
+import { IssueSidebar } from "@/features/compliance/components/issue-sidebar";
+import { InspectorPanel } from "@/features/compliance/components/inspector-panel";
+import { Viewer3DPlaceholder } from "@/features/compliance/components/viewer-3d-placeholder";
 
 export default async function ComplianceResultsPage({
     params,

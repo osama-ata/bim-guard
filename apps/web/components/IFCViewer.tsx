@@ -5,10 +5,10 @@ import * as THREE from "three";
 import * as OBC from "@thatopen/components";
 
 import { useBIMViewer, useCamera } from "@/hooks";
-import { useBIMContext } from "@/lib/BIMContext";
+import { useBIMStore } from "@/store/useBIMStore";
 import { IFCLoaderService } from "@/lib/ifcLoaderService";
 import { FragmentsService, StatsService } from "@/services";
-import { ViewerContainer, ViewerToolbar } from "@/components/viewer";
+import { ViewerContainer, ViewerToolbar } from "@/features/viewer/components";
 import { DEFAULT_VIEWER_CONFIG } from "@/config";
 
 /**
@@ -19,7 +19,7 @@ export default function IFCViewer() {
     const containerRef = useRef<HTMLDivElement>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const { components, world, isReady: isViewerReady } = useBIMViewer(containerRef);
-    const { uploadedFile } = useBIMContext();
+    const uploadedFile = useBIMStore((state) => state.uploadedFile);
 
     // Use camera hook
     const { fitToModelWithRetry } = useCamera(world?.camera ?? null);

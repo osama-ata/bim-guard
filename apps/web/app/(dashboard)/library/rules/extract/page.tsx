@@ -1,5 +1,5 @@
-import { PDFViewerPlaceholder } from "@/components/rule-studio/pdf-viewer-placeholder";
-import { RuleEditorForm } from "@/components/rule-studio/rule-editor-form";
+import { PDFViewerPlaceholder } from "@/features/rule-studio/components/pdf-viewer-placeholder";
+import { RuleEditorForm } from "@/features/rule-studio/components/rule-editor-form";
 import { Separator } from "@/components/ui/separator";
 
 export default function RuleExtractionPage() {

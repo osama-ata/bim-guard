@@ -3,12 +3,12 @@
 import React, { useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { useBIMContext } from "@/lib/BIMContext";
+import { useBIMStore } from "@/store/useBIMStore";
 import { Upload } from "lucide-react";
 
 export function IFCUploadButton() {
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const { setUploadedFile } = useBIMContext();
+    const setUploadedFile = useBIMStore((state) => state.setUploadedFile);
     const router = useRouter();
 
     const handleButtonClick = () => {

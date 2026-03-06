@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Automated BIM Compliance Checking",
 };
 
+import Providers from "@/lib/query-client";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

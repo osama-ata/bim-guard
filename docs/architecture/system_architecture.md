@@ -31,7 +31,7 @@ graph TD
         Upload["File Uploader<br/>(PDF Standards, BEPs, IFC Models)"]
         Vis["Results Visualization"]
         Exp["Export Reports"]
-        
+
         UI --> Upload
         UI --> Vis
         UI --> Exp
@@ -39,13 +39,14 @@ graph TD
 
     %% Orchestration
     Orchestrator["Workflow Orchestrator"]
-    
+
     %% Backend Modules
     subgraph "Backend System"
-    
+
         %% Data Store
         subgraph DB ["Data_Store"]
             RuleStore[("Rule Database<br/>(JSON/Regex/SHACL)")]
+            %% TODO: Currently bypassed using static obc_part9.json served via API
         end
 
         %% Module 1: Document Parsing
@@ -58,16 +59,17 @@ graph TD
             IFCRead["IFC_Parser<br/>(IfcOpenShell)"]
             AttrExt["Attribute_Extractor"]
             GeomExt["Geometry_Extractor"]
-            
+
             IFCRead --> AttrExt
             IFCRead --> GeomExt
         end
 
         %% Module 3: Rule Logic
         subgraph Mod3 ["Module_3_Rule_Converter"]
+            %% TODO: NLP and Rule Generator are currently stubs bypassed by static obc_part9.json via API
             NLP["NLP_Engine<br/>(LLM / Prompt_Engineering)"]
             RuleGen["Rule_Generator<br/>(Natural_Language -> Structured_Rules)"]
-            
+
             NLP --> RuleGen
         end
 
@@ -86,18 +88,18 @@ graph TD
     %% Workflow Connections
     User --> Frontend
     Frontend --> Orchestrator
-    
+
     %% Flows
     Orchestrator --> Mod1
     Orchestrator --> Mod2 --> Mod4
     Mod4 --> Mod5
     Mod5 --> Orchestrator
-    
+
     %% 1. Read Docs -> 3. Convert to Rules -> Store
     DocParser --> NLP
     RuleGen --> RuleStore --> Mod4
 
-  
+
 ```
 
 ## 2. Module 1 & 3: Rule Extraction Workflow (Sequence)
@@ -116,13 +118,13 @@ sequenceDiagram
     Frontend->>Mod1: Send PDF File
     Mod1->>Mod1: Extract Raw Text from PDF
     Mod1-->>Mod3: Send Text Chunks
-    
+
     Note over Mod3: Prompt: "Convert text requirements<br/>to machine-readable logic"
-    
+
     Mod3->>Mod3: LLM Interpretation
     Mod3->>Mod3: Generate JSON/Regex Rules
     Mod3->>DB: Save Rules to Database
-    
+
     Mod3-->>Frontend: Return Extracted Rules
     Frontend->>User: Display Rules for Confirmation
 ```
@@ -142,12 +144,12 @@ flowchart LR
     %% Module 4
     subgraph "Module 4: Spatial Comparator"
         Geom --> Voxel["V-HACD Decomposition<br/>(Simplify Geometry)"]
-        
+
         Rules[(Rule Store)] --> Logic["Fetch Clearance Rules"]
-        
+
         Voxel --> Minkowski["Halo Generation<br/>(Minkowski Sum)"]
         Logic --> Minkowski
-        
+
         Minkowski --> Collision["Intersection Test<br/>(GJK Algorithm)"]
     end
 
@@ -167,7 +169,7 @@ classDiagram
         +run_dashboard()
         +orchestrate_workflow()
     }
-    
+
     class Module1_DocReader {
         +parse_pdf()
         +extract_text_sections()
@@ -185,13 +187,13 @@ classDiagram
         +build_shacl_shapes()
         +save_rule_to_db()
     }
-    
+
     class Module4_Comparator {
         +validate_metadata()
         +check_naming_conventions()
         +check_spatial_clearances()
     }
-    
+
     class Module5_Reporter {
         +create_bcf_topic()
         +generate_csv_summary()

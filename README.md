@@ -4,7 +4,7 @@ A professional compliance automation platform for IFC models, built as a full-st
 
 ## Features
 
-- **Automated Rule Extraction**: Ingest PDFs (Standards, Codes, BEPs) and extract machine-readable validation rules.
+- **Automated Rule Extraction**: Ingest PDFs (Standards, Codes, BEPs) and extract machine-readable validation rules. _(TODO: Currently bypassed using a static `obc_part9.json` mock served via API)._
 - **3D IFC Compliance Checking**: Validate IFC models against extracted rules using `@thatopen/components`.
 - **IDE-Style Analysis**: A technical interface for deep-dive inspection of compliance issues.
 - **Reporting**: Generate BCF reports for flagged issues.
