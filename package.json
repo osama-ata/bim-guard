@@ -10,6 +10,10 @@
     "start": "turbo run start"
   },
   "devDependencies": {
+    "@types/stats.js": "^0.17.4",
     "turbo": "^2.1.0"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.21"
   }
 }
