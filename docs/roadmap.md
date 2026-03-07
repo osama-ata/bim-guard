@@ -566,12 +566,12 @@ ex:justification "Owner requirement per project BEP Section 3.2" ;
 
 **Performance Targets:**
 
-| Model Size \& Phase 2 Performance \& Phase 3 Target |
-| --------------------------------------------------- |
-| 10,000 elements \& 2 minutes \& 30 seconds          |
-| 50,000 elements \& 12 minutes \& 2 minutes          |
-| 100,000 elements \& 35 minutes \& 5 minutes         |
-| 500,000 elements \& N/A \& 20 minutes               |
+| Model Size       | Phase 2 Performance | Phase 3 Target |
+| ---------------- | ------------------- | -------------- |
+| 10,000 elements  | 2 minutes           | 30 seconds     |
+| 50,000 elements  | 12 minutes          | 2 minutes      |
+| 100,000 elements | 35 minutes          | 5 minutes      |
+| 500,000 elements | N/A                 | 20 minutes     |
 
 _Validation performance improvement targets_
 
@@ -897,18 +897,18 @@ ex:reason "Panel energization in Phase 3" ;
 
 ### Core Technologies
 
-| Layer \& Technologies                                        |
-| ------------------------------------------------------------ |
-| IFC Parsing \& IfcOpenShell, ifcopenshell-python             |
-| Data Processing \& pandas, NumPy, SciPy                      |
-| Machine Learning \& PyTorch, PyTorch Geometric, scikit-learn |
-| Semantic Web \& Apache Jena, rdflib, pyshacl                 |
-| Computational Geometry \& CGAL, Shapely, trimesh             |
-| Spatial Indexing \& R-tree, Octree, GeoSPARQL                |
-| Backend \& FastAPI, Celery, Redis, PostgreSQL, MongoDB       |
-| Frontend \& React.js, Three.js, Babylon.js                   |
-| DevOps \& Docker, Kubernetes, Terraform, GitHub Actions      |
-| Cloud \& AWS/Azure (compute, storage, databases)             |
+| Layer                  | Technologies                                  |
+| ---------------------- | --------------------------------------------- |
+| IFC Parsing            | IfcOpenShell, ifcopenshell-python             |
+| Data Processing        | pandas, NumPy, SciPy                          |
+| Machine Learning       | PyTorch, PyTorch Geometric, scikit-learn      |
+| Semantic Web           | Apache Jena, rdflib, pyshacl                  |
+| Computational Geometry | CGAL, Shapely, trimesh                        |
+| Spatial Indexing       | R-tree, Octree, GeoSPARQL                     |
+| Backend                | FastAPI, Celery, Redis, PostgreSQL, MongoDB   |
+| Frontend               | React.js, Three.js, Babylon.js                |
+| DevOps                 | Docker, Kubernetes, Terraform, GitHub Actions |
+| Cloud                  | AWS/Azure (compute, storage, databases)       |
 
 _Complete technology stack for BIMGUARD AI_
 
@@ -925,12 +925,12 @@ _Complete technology stack for BIMGUARD AI_
 
 ### Technical Risks
 
-| Risk \& Mitigation \& Contingency                                                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GNN accuracy below target (85\%) \& Transfer learning from pre-trained models; expand training dataset \& Fall back to deterministic classification rules                 |
-| SHACL performance bottleneck \& Triple store optimization; query caching; materialized views \& Hybrid system: SHACL for complex rules, hard-coded for high-volume checks |
-| Minkowski sum computation too slow \& GPU acceleration; spatial indexing; LOD for distant elements \& Approximate clearance zones with bounding boxes                     |
-| IFC parsing failures \& Extensive testing with buildingSMART samples; fallback to IFC2x3 \& Manual geometry input for problematic models                                  |
+| Risk                               | Mitigation                                                         | Contingency                                                               |
+| ---------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| GNN accuracy below target (85\%)   | Transfer learning from pre-trained models; expand training dataset | Fall back to deterministic classification rules                           |
+| SHACL performance bottleneck       | Triple store optimization; query caching; materialized views       | Hybrid system: SHACL for complex rules, hard-coded for high-volume checks |
+| Minkowski sum computation too slow | GPU acceleration; spatial indexing; LOD for distant elements       | Approximate clearance zones with bounding boxes                           |
+| IFC parsing failures               | Extensive testing with buildingSMART samples; fallback to IFC2x3   | Manual geometry input for problematic models                              |
 
 _Technical risk mitigation strategies_
 
@@ -983,17 +983,17 @@ _Technical risk mitigation strategies_
 
 ### Team Structure
 
-| Role \& Phase 1-2 \& Phase 3-4        |
-| ------------------------------------- |
-| Project Lead \& 1 FTE \& 1 FTE        |
-| ML Engineers \& 1 FTE \& 2 FTE        |
-| Backend Developers \& 2 FTE \& 3 FTE  |
-| Frontend Developers \& 1 FTE \& 2 FTE |
-| DevOps Engineers \& 0.5 FTE \& 1 FTE  |
-| BIM Domain Experts \& 1 FTE \& 1 FTE  |
-| QA/Testing \& 0.5 FTE \& 1 FTE        |
-| Technical Writer \& 0.5 FTE \& 1 FTE  |
-| Total \& 7.5 FTE \& 12 FTE            |
+| Role                | Phase 1-2 | Phase 3-4 |
+| ------------------- | --------- | --------- |
+| Project Lead        | 1 FTE     | 1 FTE     |
+| ML Engineers        | 1 FTE     | 2 FTE     |
+| Backend Developers  | 2 FTE     | 3 FTE     |
+| Frontend Developers | 1 FTE     | 2 FTE     |
+| DevOps Engineers    | 0.5 FTE   | 1 FTE     |
+| BIM Domain Experts  | 1 FTE     | 1 FTE     |
+| QA/Testing          | 0.5 FTE   | 1 FTE     |
+| Technical Writer    | 0.5 FTE   | 1 FTE     |
+| Total               | 7.5 FTE   | 12 FTE    |
 
 _Recommended team composition_
 
@@ -1002,9 +1002,9 @@ _Recommended team composition_
 - Cloud compute (AWS/Azure): \$5,000-\$10,000
 - Database hosting: \$2,000-\$4,000
 - Storage (models, backups): \$1,000-\$2,000
-- CDN \& networking: \$500-\$1,000
+- CDN | networking: \$500-\$1,000
 - Third-party APIs (LLMs): \$2,000-\$5,000
-- Monitoring \& logging: \$500-\$1,000
+- Monitoring | logging: \$500-\$1,000
 
 **Total monthly infrastructure: $11,000-$23,000** (scales with usage)
 

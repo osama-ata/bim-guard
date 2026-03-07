@@ -3,6 +3,7 @@
         "dbaeumer.vscode-eslint",
         "shd101wyy.markdown-preview-enhanced",
         "esbenp.prettier-vscode",
-        "ritwickdey.liveserver"
+        "ritwickdey.liveserver",
+        "ms-azuretools.vscode-docker"
     ]
 }
