@@ -1,5 +1,6 @@
 import json
 import os
+from functools import lru_cache
 from fastapi import APIRouter, HTTPException
 
 router = APIRouter()
@@ -11,6 +12,14 @@ RULES_FILE_PATH = os.path.join(
     "obc_part9.json"
 )
 
+@lru_cache(maxsize=1)
+def get_cached_rules(path: str):
+    """
+    Reads and parses the JSON rules file, caching the result.
+    """
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
 @router.get("/")
 def get_rules():
     """
@@ -21,8 +30,8 @@ def get_rules():
         raise HTTPException(status_code=404, detail="Rules data file not found.")
         
     try:
-        with open(RULES_FILE_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            return data
+        return get_cached_rules(RULES_FILE_PATH)
     except Exception as e:
+        # Clear cache in case of transient errors
+        get_cached_rules.cache_clear()
         raise HTTPException(status_code=500, detail=f"Error reading rules data: {str(e)}")
