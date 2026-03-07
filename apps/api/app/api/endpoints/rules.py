@@ -34,4 +34,4 @@ def get_rules():
     except Exception as e:
         # Clear cache in case of transient errors
         get_cached_rules.cache_clear()
-        raise HTTPException(status_code=500, detail=f"Error reading rules data: {str(e)}")
+        raise HTTPException(status_code=500, detail="An error occurred while reading rules data.")
