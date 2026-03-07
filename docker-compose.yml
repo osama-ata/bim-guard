@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  web:
+    image: node:20-bookworm
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    ports:
+      - "3000:3000"
+    command: >
+      bash -c "
+      curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh &&
+      npm install -g pnpm &&
+      pnpm install &&
+      pnpm turbo run dev --filter=web
+      "
+
+  api:
+    image: ghcr.io/astral-sh/uv:python3.12-bookworm
+    working_dir: /workspace/apps/api
+    volumes:
+      - ../../:/workspace
+    ports:
+      - "8000:8000"
+    command: bash -c "uv run fastapi dev app/main.py --host 0.0.0.0"

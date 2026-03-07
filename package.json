@@ -2,10 +2,7 @@
   "name": "bim-guard-monorepo",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "npm@10.8.2",
-  "workspaces": [
-    "apps/*"
-  ],
+  "packageManager": "pnpm@9.14.2",
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "fastapi dev app/main.py",
-    "start": "fastapi run app/main.py"
+    "postinstall": "uv sync",
+    "dev": "uv run python dev.py",
+    "start": "uv run fastapi run app/main.py"
   }
 }
