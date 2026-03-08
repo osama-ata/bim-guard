@@ -20,4 +20,5 @@ async def analyze_ifc(file: UploadFile = File(...)):
         }
     except Exception as e:
         logger.error(f"Error processing IFC file: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+        # SEC-FIX: Use generic error message to prevent exception detail leakage
+        raise HTTPException(status_code=500, detail="An internal error occurred while processing the IFC file")
