@@ -7,7 +7,7 @@ import * as OBC from "@thatopen/components";
 import { useBIMViewer, useCamera } from "@/hooks";
 import { useBIMStore } from "@/store/useBIMStore";
 import { IFCLoaderService } from "@/lib/ifcLoaderService";
-import { FragmentsService, StatsService } from "@/services";
+import { FragmentsService, StatsService, SpatialTreeService } from "@/services";
 import { ViewerContainer, ViewerToolbar } from "@/features/viewer/components";
 import { DEFAULT_VIEWER_CONFIG } from "@/config";
 
@@ -20,6 +20,7 @@ export default function IFCViewer() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const { components, world, isReady: isViewerReady } = useBIMViewer(containerRef);
     const uploadedFile = useBIMStore((state) => state.uploadedFile);
+    const setSpatialTree = useBIMStore((state) => state.setSpatialTree);
 
     // Use camera hook
     const { fitToModelWithRetry } = useCamera(world?.camera ?? null);
@@ -88,13 +89,20 @@ export default function IFCViewer() {
             if (DEFAULT_VIEWER_CONFIG.autoZoomOnLoad && model.object instanceof THREE.Object3D) {
                 await fitToModelWithRetry(model.object);
             }
+
+            // Extract and set spatial tree
+            const tree = await SpatialTreeService.getSpatialTree(model);
+            if (tree) {
+                console.log("Spatial tree extracted successfully:", tree);
+                setSpatialTree(tree);
+            }
         });
 
         return () => {
             world.camera.controls.removeEventListener("update", handleCameraUpdate);
             unsubscribe();
         };
-    }, [isServicesReady, world, fitToModelWithRetry]);
+    }, [isServicesReady, world, fitToModelWithRetry, setSpatialTree]);
 
     // Load uploaded file if present
     useEffect(() => {

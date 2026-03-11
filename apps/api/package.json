@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "postinstall": "uv sync",
-    "dev": "uv run python dev.py",
-    "start": "uv run fastapi run app/main.py"
+    "dev": "uv run python -X utf8 dev.py",
+    "start": "uv run python -X utf8 -m fastapi run app/main.py"
   }
 }

@@ -9,6 +9,7 @@ import { Upload } from "lucide-react";
 export function IFCUploadButton() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const setUploadedFile = useBIMStore((state) => state.setUploadedFile);
+    const setSpatialTree = useBIMStore((state) => state.setSpatialTree);
     const router = useRouter();
 
     const handleButtonClick = () => {
@@ -29,6 +30,10 @@ export function IFCUploadButton() {
                 if (response.ok) {
                     const result = await response.json();
                     console.log("Analysis Result from Python Backend:", result);
+                    // Store the spatial tree from the API response
+                    if (result.spatial_tree) {
+                        setSpatialTree(result.spatial_tree);
+                    }
                 } else {
                     console.error("Analysis Failed:", await response.text());
                 }

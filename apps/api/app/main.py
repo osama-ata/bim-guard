@@ -25,7 +25,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the BIM Guard Backend API"}
+    return {"message": "BIM Guard API is working", "status": "ok"}
 
 # Include routers
 app.include_router(analyze.router, prefix="/api/v1/analyze", tags=["Analyze"])

@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@types/stats.js": "^0.17.4",
-    "turbo": "^2.1.0"
+    "turbo": "^2.8.16"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.21"
