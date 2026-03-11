@@ -1,9 +1,11 @@
 import json
+import logging
 import os
 from functools import lru_cache
 from fastapi import APIRouter, HTTPException
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 RULES_FILE_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
@@ -34,4 +36,5 @@ def get_rules():
     except Exception as e:
         # Clear cache in case of transient errors
         get_cached_rules.cache_clear()
-        raise HTTPException(status_code=500, detail=f"Error reading rules data: {str(e)}")
+        logger.error(f"Error reading rules data: {str(e)}")
+        raise HTTPException(status_code=500, detail="An internal error occurred while reading rules data.")
