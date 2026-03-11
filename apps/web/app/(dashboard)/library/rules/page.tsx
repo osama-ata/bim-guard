@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { RuleDocument } from "@/types/rules";
+import client from "@/services/api";
 import { Loader2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,9 +13,11 @@ export default function RulesManagerPage() {
     const { data: ruleDoc, isLoading, error } = useQuery<RuleDocument>({
         queryKey: ["compliance-rules"],
         queryFn: async () => {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/rules/");
-            if (!res.ok) throw new Error("Failed to fetch rules");
-            return res.json();
+            const { data, error } = await client.GET("/api/v1/rules/");
+            if (error) {
+                throw new Error("Failed to fetch rules");
+            }
+            return data as RuleDocument;
         }
     });
 
