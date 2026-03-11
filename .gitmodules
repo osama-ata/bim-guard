@@ -1,0 +1,3 @@
+[submodule "IFC-Sample-Test-Files"]
+	path = IFC-Sample-Test-Files
+	url = https://github.com/buildingSMART/Sample-Test-Files.git
