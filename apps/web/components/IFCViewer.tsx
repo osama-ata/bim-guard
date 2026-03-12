@@ -123,6 +123,46 @@ export default function IFCViewer() {
         loadUploadedFile();
     }, [isServicesReady, uploadedFile]);
 
+    // Compliance Visualization (Halos)
+    const haloGroupRef = useRef<THREE.Group>(new THREE.Group());
+    const complianceResults = useBIMStore((state) => state.complianceResults);
+
+    useEffect(() => {
+        if (!world || !complianceResults) return;
+
+        const scene = world.scene.three;
+        const group = haloGroupRef.current;
+        scene.add(group);
+
+        // Clear existing halos
+        while(group.children.length > 0) {
+            const child = group.children[0] as THREE.Mesh;
+            child.geometry.dispose();
+            (child.material as THREE.Material).dispose();
+            group.remove(child);
+        }
+
+        // Render new halos for spatial issues
+        complianceResults.issues.forEach(issue => {
+            if (issue.type === "CLEARANCE_VIOLATION" && issue.viewpoint) {
+                const geo = new THREE.SphereGeometry(1.0, 16, 16); // 1m halo simulation
+                const mat = new THREE.MeshBasicMaterial({ 
+                    color: 0xff0000, 
+                    transparent: true, 
+                    opacity: 0.3,
+                    depthWrite: false
+                });
+                const mesh = new THREE.Mesh(geo, mat);
+                mesh.position.set(issue.viewpoint.position[0], issue.viewpoint.position[1], issue.viewpoint.position[2]);
+                group.add(mesh);
+            }
+        });
+
+        return () => {
+            scene.remove(group);
+        };
+    }, [world, complianceResults]);
+
     // Setup stats
     useEffect(() => {
         if (!isServicesReady || !containerRef.current || !world || !statsServiceRef.current) return;

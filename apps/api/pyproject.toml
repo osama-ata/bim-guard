@@ -10,4 +10,9 @@ dependencies = [
     "pydantic>=2.12.5",
     "python-multipart>=0.0.22",
     "uvicorn>=0.41.0",
+    "pymupdf>=1.24.2",
+    "trimesh>=4.3.2",
+    "scipy>=1.13.0",
+    "reportlab>=3.6.12",
+    "pytest>=7.0",
 ]
