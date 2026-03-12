@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .api.endpoints import analyze, rules
+from .api.endpoints import analyze, rules, compliance
 
 app = FastAPI(
     title="BIM Guard API",
@@ -30,3 +30,4 @@ def read_root():
 # Include routers
 app.include_router(analyze.router, prefix="/api/v1/analyze", tags=["Analyze"])
 app.include_router(rules.router, prefix="/api/v1/rules", tags=["Rules"])
+app.include_router(compliance.router, prefix="/api/v1", tags=["Compliance"])

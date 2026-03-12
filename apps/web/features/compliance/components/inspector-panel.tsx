@@ -2,8 +2,19 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, X } from "lucide-react";
+import { useBIMStore } from "../../../store/useBIMStore";
 
 export function InspectorPanel() {
+    const { selectedIssue } = useBIMStore();
+
+    if (!selectedIssue) {
+        return (
+            <div className="flex h-full w-80 flex-col border-l bg-background items-center justify-center p-8 text-center text-muted-foreground italic">
+                Select an issue to view details.
+            </div>
+        );
+    }
+
     return (
         <div className="flex h-full w-80 flex-col border-l bg-background">
             <div className="border-b p-4">
@@ -13,8 +24,8 @@ export function InspectorPanel() {
                 <div className="space-y-4">
                     <div>
                         <h4 className="text-sm font-medium text-muted-foreground mb-1">Issue Details</h4>
-                        <div className="text-lg font-bold">Clearance Violation</div>
-                        <p className="text-sm text-destructive mt-1">Found 10mm, Required 50mm</p>
+                        <div className="text-lg font-bold">{selectedIssue.type}</div>
+                        <p className="text-sm text-destructive mt-1">{selectedIssue.description}</p>
                     </div>
 
                     <Separator />
@@ -22,18 +33,11 @@ export function InspectorPanel() {
                     <div>
                         <h4 className="text-sm font-medium text-muted-foreground mb-1">Element</h4>
                         <div className="rounded-md bg-muted p-2 text-xs font-mono">
-                            IfcWallStandardCase [23423]
+                            {selectedIssue.element_id}
                         </div>
                     </div>
 
                     <Separator />
-
-                    <div>
-                        <h4 className="text-sm font-medium text-muted-foreground mb-1">Source Rule</h4>
-                        <p className="text-sm text-primary underline cursor-pointer">
-                            BEP Section 4.1.2 - Fire Egress
-                        </p>
-                    </div>
 
                     <Tabs defaultValue="properties" className="w-full">
                         <TabsList className="w-full">
@@ -43,12 +47,12 @@ export function InspectorPanel() {
                         <TabsContent value="properties" className="pt-4">
                             <div className="space-y-2 text-xs">
                                 <div className="flex justify-between">
-                                    <span className="text-muted-foreground">GlobalId</span>
-                                    <span className="font-mono">3lKj89...2k</span>
+                                    <span className="text-muted-foreground">Type</span>
+                                    <span>{selectedIssue.type}</span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <span className="text-muted-foreground">Name</span>
-                                    <span>Wall-Int-01</span>
+                                    <span className="text-muted-foreground">Status</span>
+                                    <span>{selectedIssue.status}</span>
                                 </div>
                             </div>
                         </TabsContent>
