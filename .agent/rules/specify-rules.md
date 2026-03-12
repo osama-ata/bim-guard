@@ -11,8 +11,10 @@ Auto-generated from all feature plans. Last updated: 2026-03-11
 ## Project Structure
 
 ```text
-src/
-tests/
+apps/
+  ...           # Turborepo apps (e.g., web, api, etc.)
+specs/         # Architecture and feature specifications
+...            # Other monorepo roots (e.g., packages/, tooling/, etc.)
 ```
 
 ## Commands
