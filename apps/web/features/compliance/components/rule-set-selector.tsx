@@ -5,6 +5,7 @@ import { Check, ClipboardList, ShieldAlert } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useBIMStore } from "../../../store/useBIMStore";
+import { API_BASE_URL } from "@/lib/apiConfig";
 
 const MOCK_RULE_SETS = [
   {
@@ -40,7 +41,7 @@ export function RuleSetSelector() {
     formData.append("rule_set_ids", JSON.stringify(selectedIds));
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/compliance/check", {
+      const response = await fetch(`${API_BASE_URL}/compliance/check`, {
         method: "POST",
         body: formData,
       });

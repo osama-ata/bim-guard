@@ -7,6 +7,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 import { IngestResponse } from "../../types/compliance";
+import { API_BASE_URL } from "@/lib/apiConfig";
 
 export function IngestionView() {
   const [file, setFile] = useState<File | null>(null);
@@ -27,7 +28,7 @@ export function IngestionView() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/compliance/ingest", {
+      const response = await fetch(`${API_BASE_URL}/compliance/ingest`, {
         method: "POST",
         body: formData,
       });

@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
+import { API_BASE_URL } from "@/lib/apiConfig";
 import { IngestResponse } from "../types/compliance";
 
 export const useRuleIngestion = () => {
@@ -7,7 +8,7 @@ export const useRuleIngestion = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://localhost:8000/api/v1/compliance/ingest", {
+      const response = await fetch(`${API_BASE_URL}/compliance/ingest`, {
         method: "POST",
         body: formData,
       });
