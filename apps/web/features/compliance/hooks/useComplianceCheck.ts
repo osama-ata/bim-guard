@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
+import { API_BASE_URL } from "@/lib/apiConfig";
 import { ComplianceResults } from "../types/compliance";
 
 interface ComplianceCheckVariables {
@@ -13,7 +14,7 @@ export const useComplianceCheck = () => {
       formData.append("file", file);
       formData.append("rule_set_ids", JSON.stringify(ruleSetIds));
 
-      const response = await fetch("http://localhost:8000/api/v1/compliance/check", {
+      const response = await fetch(`${API_BASE_URL}/compliance/check`, {
         method: "POST",
         body: formData,
       });
