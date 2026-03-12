@@ -31,7 +31,17 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **Boundary Integrity**: Identify the impacted app boundaries (`apps/web`, `apps/api`, `docs`,
+  `specs`) and confirm the design keeps frontend UI, backend services, and documentation in their
+  intended locations.
+- **Contract Coverage**: Confirm which user scenarios, API contracts, rule payloads, OpenAPI
+  surfaces, or shared types will change and where those updates will be captured.
+- **Verification Plan**: List the automated or manual checks required for the changed behavior,
+  including backend tests, frontend type/lint/test steps, and any justified gaps.
+- **Resource Handling**: Document file-size, memory, latency, or background-processing concerns for
+  IFC, PDF, geometry, or batch workloads.
+- **Documentation Impact**: Name the README, guides, specs, or operational docs that must be
+  updated in the same change.
 
 ## Project Structure
 

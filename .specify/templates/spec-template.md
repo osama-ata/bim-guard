@@ -74,6 +74,8 @@
 
 - What happens when [boundary condition]?
 - How does system handle [error scenario]?
+- How does the feature behave with large IFC or document uploads, slow parsing, or partial results?
+- What contract or schema mismatches must be detected and surfaced safely?
 
 ## Requirements *(mandatory)*
 
@@ -89,11 +91,18 @@
 - **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
 - **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
 - **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-006**: System MUST define any changed API, rule, or shared data contract explicitly.
+- **FR-007**: System MUST state the required verification for each behavior change or record why a
+  given automated check is not practical.
+- **FR-008**: System MUST describe material performance or memory constraints for large-file or BIM
+  processing workflows when applicable.
+- **FR-009**: System MUST identify any documentation or operational guidance that changes with this
+  feature.
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-010**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
+- **FR-011**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
 ### Key Entities *(include if feature involves data)*
 
@@ -113,3 +122,4 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-005**: [Verification metric, e.g., "Required automated checks pass for all changed paths"]

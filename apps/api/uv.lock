@@ -47,12 +47,16 @@ dependencies = [
     { name = "ifcopenshell" },
     { name = "pydantic" },
     { name = "pymupdf" },
-    { name = "pytest" },
     { name = "python-multipart" },
-    { name = "reportlab" },
     { name = "scipy" },
     { name = "trimesh" },
     { name = "uvicorn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "reportlab" },
 ]
 
 [package.metadata]
@@ -61,12 +65,16 @@ requires-dist = [
     { name = "ifcopenshell", specifier = ">=0.8.4.post1" },
     { name = "pydantic", specifier = ">=2.12.5" },
     { name = "pymupdf", specifier = ">=1.24.2" },
-    { name = "pytest", specifier = ">=7.0" },
     { name = "python-multipart", specifier = ">=0.0.22" },
-    { name = "reportlab", specifier = ">=3.6.12" },
     { name = "scipy", specifier = ">=1.13.0" },
     { name = "trimesh", specifier = ">=4.3.2" },
     { name = "uvicorn", specifier = ">=0.41.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pytest", specifier = ">=7.0" },
+    { name = "reportlab", specifier = ">=3.6.12" },
 ]
 
 [[package]]

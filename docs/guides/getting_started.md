@@ -1,22 +1,31 @@
 # Getting Started
 
-## 1. Frontend Setup (Next.js)
+## 1. Install Workspace Dependencies
 
 ```bash
-npm install
-npm run dev
+pnpm install
 ```
 
-## 2. Backend Setup (FastAPI)
+## 2. Sync the Backend Environment
 
 ```bash
-cd backend
-python -m venv venv
-# On Windows:
-.\venv\Scripts\activate
-# On Linux/Mac:
-source venv/bin/activate
+cd apps/api
+uv sync
 
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+# Optional: activate the environment for direct backend commands
+# Windows
+.\.venv\Scripts\activate
+# Linux/macOS
+# source .venv/bin/activate
+
+cd ../..
 ```
+
+## 3. Run the Monorepo
+
+```bash
+pnpm dev
+```
+
+This starts the Next.js app and the FastAPI service using the repository's configured monorepo
+workflow.
