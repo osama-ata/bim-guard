@@ -113,7 +113,8 @@ async def ingest_document(file: UploadFile = File(...)):
     # Local path for processing
     temp_dir = Path("temp")
     temp_dir.mkdir(exist_ok=True)
-    temp_path = temp_dir / file.filename
+    safe_suffix = Path(os.path.basename(file.filename or "")).suffix or ""
+    temp_path = temp_dir / f"{uuid4()}{safe_suffix}"
     
     with open(temp_path, "wb") as f:
         f.write(await file.read())
