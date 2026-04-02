@@ -1,7 +1,7 @@
 import re
 from typing import List, Dict, Any
 from uuid import uuid4
-from ..models.rule_models import RuleType
+from ...models.rule_models import RuleType
 
 class RuleBuilder:
     """

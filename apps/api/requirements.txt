@@ -1,0 +1,25 @@
+# BIMGuard AI — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── DOCUMENT PARSING ─────────────────────────────────────────────────────────
+docling>=2.0.0              # IBM MIT-licensed PDF extraction (text + tables)
+
+# ── NLP ──────────────────────────────────────────────────────────────────────
+spacy>=3.7.0                # tokenization, lemmatization, NER
+scikit-learn>=1.4.0         # TF-IDF scoring
+# After installing spacy, run: python -m spacy download en_core_web_sm
+
+# ── LLM ──────────────────────────────────────────────────────────────────────
+openai>=1.30.0              # GPT-4o API
+
+# ── DATABASE ─────────────────────────────────────────────────────────────────
+# sqlite3 is built into Python — no install needed
+
+# ── DATA HANDLING ─────────────────────────────────────────────────────────────
+pandas>=2.0.0               # DataFrame handling for table extraction
+
+# ── ENVIRONMENT ──────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0        # loads .env file for API keys
+
+# ── TESTING ──────────────────────────────────────────────────────────────────
+pytest>=8.0.0               # unit tests

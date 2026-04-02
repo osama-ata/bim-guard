@@ -7,7 +7,7 @@ import os
 from app.models.compliance_models import ComplianceCheck, IssueStatus
 from app.services.result_store import ResultStore
 from app.modules.module1_doc_reader import DocReader
-from app.modules.module3_rule_builder import RuleBuilder
+from apps.api.app.modules.module3_rule_builder.module3_rule_builder_mock import RuleBuilder
 
 from app.services.compliance_engine import ComplianceEngine
 from app.models.rule_models import Rule, RuleType
